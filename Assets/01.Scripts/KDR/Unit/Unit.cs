@@ -5,8 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Crogen.CrogenPooling;
 
-public class Unit : MonoBehaviour
+public class Unit : MonoBehaviour, IPoolingObject
 {
     public Transform VisualPivotTrm { get; private set; }
     public Transform VisualTrm { get; private set; }
@@ -17,6 +18,8 @@ public class Unit : MonoBehaviour
     public StateMachine StateMachine { get; private set; }
 
     [field:SerializeField] public StatSO Stat { get; private set; }
+    public string OriginPoolType { get; set; }
+    GameObject IPoolingObject.gameObject { get; set; }
 
     [SerializeField] private HPBar _hpBar;
 
@@ -86,5 +89,15 @@ public class Unit : MonoBehaviour
     private void OnDestroy()
     {
         _components.Values.ToList().ForEach(compo => compo.Dispose());
+    }
+
+    public void OnPop()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void OnPush()
+    {
+        throw new NotImplementedException();
     }
 }

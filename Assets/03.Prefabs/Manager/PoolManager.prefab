@@ -48,7 +48,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 265ad6051dcb556468478c955d01d7a6, type: 2}
   - {fileID: 11400000, guid: a78d63a7d78cc2b4290ba00019d47002, type: 2}
   - {fileID: 11400000, guid: cf3ea6d690b92204e9ee4f37a82d9bb6, type: 2}
+  - {fileID: 11400000, guid: 3c58747b498608e49a48d28c5747d20c, type: 2}
   poolingPairs:
-  - poolType: LaserHitEffect
-    prefab: {fileID: 8935148608253045430, guid: cdcd045eeb323fc418c51a085b2c6875, type: 3}
-    poolCount: 20
+  - poolType: Bear
+    prefab: {fileID: 6593177416496475999, guid: 87b5eb6e4db0cc1499c8ee305c184a5f, type: 3}
+    poolCount: 10
