@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 
 public class ResourceProduceBuildingModifier : BuildingModifier
@@ -25,7 +26,7 @@ public class ResourceProduceBuildingModifier : BuildingModifier
         if (_curTime > _delay)
         {
             _curTime = 0.0f;
-            ResourceManager.Instance.AddResource(resourceType, amount);   
+            ResourceManager.Instance.AddResource(resourceType, amount * _owner.GetWorkingUnitsAmount());   
             OnProduceCompleteEvent?.Invoke();
         }
     }
