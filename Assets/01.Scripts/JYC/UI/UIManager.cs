@@ -49,6 +49,7 @@ public class UIManager : MonoSingleton<UIManager>
         _isBulidCanvas = state;
     }
 
+
     public void UnitManagementPanelOn(string name, string description, Sprite animalSprite)
     {
         _unitManagementPanel.gameObject.SetActive(true);
