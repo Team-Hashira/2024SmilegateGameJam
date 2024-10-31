@@ -6,6 +6,10 @@ public enum BuildingType
 {
     None = 0,
     Ore,
+    BlackSmith,
+    LaserTurret,
+    Ranch,
+    Core
     
     
 }
