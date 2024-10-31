@@ -24,12 +24,4 @@ public class BuildingManager : MonoSingleton<BuildingManager>
         Building building = Instantiate(BuildingPrefabDataSO.buildingPrefabs[buildingType], position, Quaternion.identity);
         return building;
     }
-
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            CreateBuilding(BuildingType.Ore, Camera.main.ScreenToWorldPoint(Input.mousePosition));
-        }
-    }
 }

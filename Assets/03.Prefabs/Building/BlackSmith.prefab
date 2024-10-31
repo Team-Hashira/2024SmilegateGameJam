@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlackSmith
       objectReference: {fileID: 0}
+    - target: {fileID: 894682101679629768, guid: 68744efcc48a9e942bd33a6eb638089e, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 1701154339150102689, guid: 68744efcc48a9e942bd33a6eb638089e, type: 3}
       propertyPath: m_Sprite
       value: 
