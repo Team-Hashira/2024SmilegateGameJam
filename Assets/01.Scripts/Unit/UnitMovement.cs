@@ -1,3 +1,4 @@
+using Gondr.Astar;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -40,8 +41,8 @@ public class UnitMovement : MonoBehaviour, IUnitComponent
     {
         if (_moveCoroutine != null)
             StopCoroutine(_moveCoroutine);
-        _owner.AStarAgentCompo.SetDestination(position);
-        _path = _owner.AStarAgentCompo.GetPath();
+        _owner.GetCompo<AstarAgent>().SetDestination(position);
+        _path = _owner.GetCompo<AstarAgent>().GetPath();
         _path[_path.Count - 1] += (Vector3)UnityEngine.Random.insideUnitCircle * 0.8f;
         _moveCoroutine = StartCoroutine(MoveCoroutine());
     }

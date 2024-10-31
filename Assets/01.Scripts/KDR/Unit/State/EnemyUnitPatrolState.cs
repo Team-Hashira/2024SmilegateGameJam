@@ -14,8 +14,6 @@ public class EnemyUnitPatrolState : State
     {
         base.Enter();
 
-        Debug.Log("Patrol");
-
         _enemyUnit = _owner as EnemyUnit;
 
         _owner.VisualPivotTrm.localEulerAngles = new Vector3(0, 0, -7f);

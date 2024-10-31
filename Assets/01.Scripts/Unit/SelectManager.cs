@@ -61,7 +61,7 @@ public class SelectManager : MonoSingleton<SelectManager>
                         }
                         else
                         {
-                            unit.MovementCompo.SetDestination(Camera.main.ScreenToWorldPoint(mousePos));
+                            unit.GetCompo<UnitMovement>().SetDestination(Camera.main.ScreenToWorldPoint(mousePos));
                             unit.StateMachine.ChangeState(EAllyUnitState.Move);
                         }
                     }

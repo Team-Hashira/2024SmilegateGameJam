@@ -14,8 +14,6 @@ public class EnemyUnitChaseState : State
     {
         base.Enter();
 
-        Debug.Log("Chase");
-
         _enemyUnit = _owner as EnemyUnit;
 
         _owner.VisualPivotTrm.localEulerAngles = new Vector3(0, 0, -7f);

@@ -14,9 +14,9 @@ public class EnemyUnitAttackState : State
         Collider2D target;
         _owner.TargetDetected(out target);
 
-        _owner.GetCompo<UnitAttack>().Attack((target.transform.position - _owner.transform.position).normalized);
+        _owner.GetCompo<UnitAttack>(true).Attack((target.transform.position - _owner.transform.position).normalized);
 
-        _owner.GetCompo<UnitAttack>().OnAttackEndEvent += HandleAttavkEndEvent;
+        _owner.GetCompo<UnitAttack>(true).OnAttackEndEvent += HandleAttavkEndEvent;
     }
 
     private void HandleAttavkEndEvent()
@@ -28,7 +28,7 @@ public class EnemyUnitAttackState : State
     {
         base.Exit();
 
-        _owner.GetCompo<UnitAttack>().OnAttackEndEvent -= HandleAttavkEndEvent;
+        _owner.GetCompo<UnitAttack>(true).OnAttackEndEvent -= HandleAttavkEndEvent;
     }
 
     public override void StateUpdate()
