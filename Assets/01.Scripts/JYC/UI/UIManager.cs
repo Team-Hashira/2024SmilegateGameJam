@@ -6,16 +6,19 @@ public class UIManager : MonoSingleton<UIManager>
 {
     [SerializeField] private Canvas _bulidCanvas;
     [SerializeField] private Canvas _defaultCanvas;
+    [SerializeField] private Canvas _dieCanvas;
+
     [SerializeField] private Image _escPanel;
     [SerializeField] private Image _unitManagementPanel;
     [SerializeField] private Image _unitInfomationPanel;
 
     private bool _isBulidCanvas = false;
     private bool _isEscPanel = false;
+    private bool _isDie = false;
 
     public void BulidCanvas(bool state)
     {
-        if (_isEscPanel)
+        if (_isEscPanel || _isDie)
             return;
 
         _bulidCanvas.enabled = state;
@@ -25,7 +28,7 @@ public class UIManager : MonoSingleton<UIManager>
 
     public void EscPanel(bool state)
     {
-        if (_isBulidCanvas)
+        if (_isBulidCanvas || _isDie)
             return;
 
         _escPanel.gameObject.SetActive(state);
@@ -50,6 +53,12 @@ public class UIManager : MonoSingleton<UIManager>
     public void UnitInfomationPanelOff()
     {
         _unitInfomationPanel.gameObject.SetActive(false);
+    }
+
+    public void DiePanel()
+    {
+        _dieCanvas.enabled = true;
+        _isDie = true;
     }
 
     public void Build()
