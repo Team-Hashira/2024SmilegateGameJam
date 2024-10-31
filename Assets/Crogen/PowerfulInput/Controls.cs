@@ -55,7 +55,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Mouse"",
+                    ""name"": ""LeftMouse"",
                     ""type"": ""Button"",
                     ""id"": ""2c8e1516-dc3a-4a2e-89b3-814f144625e5"",
                     ""expectedControlType"": """",
@@ -71,6 +71,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""RightMouse"",
+                    ""type"": ""Button"",
+                    ""id"": ""6ca96af9-a1c1-4848-9bed-3ad5ff99bab4"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -169,7 +178,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Mouse"",
+                    ""action"": ""LeftMouse"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -181,6 +190,17 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""MouseMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5b13d4a4-535c-40fb-82b9-6b8699bf6ea3"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RightMouse"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -222,8 +242,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
-        m_Player_Mouse = m_Player.FindAction("Mouse", throwIfNotFound: true);
+        m_Player_LeftMouse = m_Player.FindAction("LeftMouse", throwIfNotFound: true);
         m_Player_MouseMove = m_Player.FindAction("MouseMove", throwIfNotFound: true);
+        m_Player_RightMouse = m_Player.FindAction("RightMouse", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_MouseClick = m_UI.FindAction("MouseClick", throwIfNotFound: true);
@@ -297,8 +318,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Dash;
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Attack;
-    private readonly InputAction m_Player_Mouse;
+    private readonly InputAction m_Player_LeftMouse;
     private readonly InputAction m_Player_MouseMove;
+    private readonly InputAction m_Player_RightMouse;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -306,8 +328,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
-        public InputAction @Mouse => m_Wrapper.m_Player_Mouse;
+        public InputAction @LeftMouse => m_Wrapper.m_Player_LeftMouse;
         public InputAction @MouseMove => m_Wrapper.m_Player_MouseMove;
+        public InputAction @RightMouse => m_Wrapper.m_Player_RightMouse;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -326,12 +349,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Attack.started += instance.OnAttack;
             @Attack.performed += instance.OnAttack;
             @Attack.canceled += instance.OnAttack;
-            @Mouse.started += instance.OnMouse;
-            @Mouse.performed += instance.OnMouse;
-            @Mouse.canceled += instance.OnMouse;
+            @LeftMouse.started += instance.OnLeftMouse;
+            @LeftMouse.performed += instance.OnLeftMouse;
+            @LeftMouse.canceled += instance.OnLeftMouse;
             @MouseMove.started += instance.OnMouseMove;
             @MouseMove.performed += instance.OnMouseMove;
             @MouseMove.canceled += instance.OnMouseMove;
+            @RightMouse.started += instance.OnRightMouse;
+            @RightMouse.performed += instance.OnRightMouse;
+            @RightMouse.canceled += instance.OnRightMouse;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -345,12 +371,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Attack.started -= instance.OnAttack;
             @Attack.performed -= instance.OnAttack;
             @Attack.canceled -= instance.OnAttack;
-            @Mouse.started -= instance.OnMouse;
-            @Mouse.performed -= instance.OnMouse;
-            @Mouse.canceled -= instance.OnMouse;
+            @LeftMouse.started -= instance.OnLeftMouse;
+            @LeftMouse.performed -= instance.OnLeftMouse;
+            @LeftMouse.canceled -= instance.OnLeftMouse;
             @MouseMove.started -= instance.OnMouseMove;
             @MouseMove.performed -= instance.OnMouseMove;
             @MouseMove.canceled -= instance.OnMouseMove;
+            @RightMouse.started -= instance.OnRightMouse;
+            @RightMouse.performed -= instance.OnRightMouse;
+            @RightMouse.canceled -= instance.OnRightMouse;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -419,8 +448,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnDash(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
-        void OnMouse(InputAction.CallbackContext context);
+        void OnLeftMouse(InputAction.CallbackContext context);
         void OnMouseMove(InputAction.CallbackContext context);
+        void OnRightMouse(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

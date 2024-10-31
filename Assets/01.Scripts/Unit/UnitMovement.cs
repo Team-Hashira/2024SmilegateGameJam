@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,8 @@ public class UnitMovement : MonoBehaviour, IUnitComponent
     private float _speed = 5;
 
     private Coroutine _moveCoroutine;
+
+    public event Action OnMoveEndEvent;
 
     public void AfterInit()
     {
@@ -27,13 +30,19 @@ public class UnitMovement : MonoBehaviour, IUnitComponent
         _owner = agent;
     }
 
+    public void StopMove()
+    {
+        if (_moveCoroutine != null)
+            StopCoroutine(_moveCoroutine);
+    }
+
     public void SetDestination(Vector3 position)
     {
         if (_moveCoroutine != null)
             StopCoroutine(_moveCoroutine);
         _owner.AStarAgentCompo.SetDestination(position);
         _path = _owner.AStarAgentCompo.GetPath();
-        _path[_path.Count - 1] += (Vector3)Random.insideUnitCircle * 0.8f;
+        _path[_path.Count - 1] += (Vector3)UnityEngine.Random.insideUnitCircle * 0.8f;
         _moveCoroutine = StartCoroutine(MoveCoroutine());
     }
 
@@ -43,6 +52,11 @@ public class UnitMovement : MonoBehaviour, IUnitComponent
         {
             float percent = 0;
             Vector3 origin = transform.position;
+            Vector3 dir = _path[i] - transform.position;
+            if (dir.x < 0)
+                _owner.Flip(-1);
+            else
+                _owner.Flip(1);
             while (percent < 1)
             {
                 percent += Time.deltaTime * _speed;
@@ -50,5 +64,6 @@ public class UnitMovement : MonoBehaviour, IUnitComponent
                 yield return null;
             }
         }
+        OnMoveEndEvent?.Invoke();
     }
 }

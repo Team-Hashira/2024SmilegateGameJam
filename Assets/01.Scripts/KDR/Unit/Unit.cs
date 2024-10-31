@@ -6,11 +6,13 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Crogen.CrogenPooling;
+using UnityEngine.EventSystems;
 
-public class Unit : MonoBehaviour, IPoolingObject
+public class Unit : MonoBehaviour, IPoolingObject, IPointerEnterHandler, IPointerExitHandler
 {
     public Transform VisualPivotTrm { get; private set; }
     public Transform VisualTrm { get; private set; }
+    public SpriteRenderer RendererCompo { get; private set; }
     public UnitMovement MovementCompo { get; protected set; }
     public AstarAgent AStarAgentCompo { get; protected set; }
     public Collider2D ColliderCompo { get; protected set; }
@@ -29,6 +31,7 @@ public class Unit : MonoBehaviour, IPoolingObject
     {
         VisualPivotTrm = transform.Find("VisualPivot");
         VisualTrm = VisualPivotTrm.Find("Visual");
+        RendererCompo = VisualTrm.GetComponent<SpriteRenderer>();
         _components = new Dictionary<Type, IUnitComponent>();
         AddComponentToDictionary();
         ComponentInitialize();
@@ -89,6 +92,12 @@ public class Unit : MonoBehaviour, IPoolingObject
         return default(T);
     }
 
+    public void Flip(int dir)
+    {
+        float yRot = dir == -1 ? 180 : 0;
+        transform.rotation = Quaternion.Euler(0, yRot, 0);
+    }
+
     private void OnDestroy()
     {
         _components.Values.ToList().ForEach(compo => compo.Dispose());
@@ -103,4 +112,15 @@ public class Unit : MonoBehaviour, IPoolingObject
     {
 
     }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        //RendererCompo.material ¾îÂ¼±¸...
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        //¿©±â¼­ ²¨ÁÖ°í
+    }
+
 }

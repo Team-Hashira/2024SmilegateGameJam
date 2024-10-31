@@ -14,7 +14,8 @@ namespace Crogen.PowerfulInput
         public event Action<bool> OnMouseRightDownEvent;
         public event Action OnDashEvent;
         public event Action OnAttackEvent;
-        public event Action<bool, Vector2> OnMouseClickEvent;
+        public event Action<bool, Vector2> OnLeftMouseClickEvent;
+        public event Action<bool, Vector2> OnRightMouseClickEvent;
         public event Action<Vector2> OnMouseMoveEvent;
         #endregion
 
@@ -79,12 +80,20 @@ namespace Crogen.PowerfulInput
             OnMosueDeltaEvent?.Invoke(context.ReadValue<Vector2>());
         }
 
-        public void OnMouse(InputAction.CallbackContext context)
+        public void OnLeftMouse(InputAction.CallbackContext context)
         {
             if (context.performed)
-                OnMouseClickEvent?.Invoke(true, MousePos);
+                OnLeftMouseClickEvent?.Invoke(true, MousePos);
             else if(context.canceled)
-                OnMouseClickEvent?.Invoke(false, MousePos); 
+                OnLeftMouseClickEvent?.Invoke(false, MousePos); 
+        }
+
+        public void OnRightMouse(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+                OnRightMouseClickEvent?.Invoke(true, MousePos);
+            else if (context.canceled)
+                OnRightMouseClickEvent?.Invoke(false, MousePos);
         }
 
         public void OnMouseMove(InputAction.CallbackContext context)

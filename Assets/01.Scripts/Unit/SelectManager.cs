@@ -7,13 +7,15 @@ using UnityEngine.InputSystem;
 
 public class SelectManager : MonoSingleton<SelectManager>
 {
-    private List<ISelectable> _seletableList;
+    private List<ISelectable> _selectableList;
     [SerializeField]
     private InputReader _inputReader;
     [SerializeField]
     private Transform _selectVisualizer;
     [SerializeField]
     private LayerMask _whatIsSeletable;
+    [SerializeField]
+    private LayerMask _whatIsEnemyUnit;
 
     private bool _isHolding = false;
 
@@ -23,17 +25,50 @@ public class SelectManager : MonoSingleton<SelectManager>
 
     private void Awake()
     {
-        _seletableList = new List<ISelectable>();
+        _selectableList = new List<ISelectable>();
         _colliders = new Collider2D[50];
 
-        _inputReader.OnMouseClickEvent += HandleOnMouseClickEvent;
-        _inputReader.OnMouseRightDownEvent += HandleOnRightMouseDownEvent;
+        _inputReader.OnLeftMouseClickEvent += HandleOnMouseClickEvent;
+        _inputReader.OnRightMouseClickEvent += HandleOnRightMouseDownEvent;
         _inputReader.OnMouseMoveEvent += HandleOnMouseMoveEvent;
     }
 
-    private void HandleOnRightMouseDownEvent(bool isClicked)
+    private void HandleOnRightMouseDownEvent(bool isClicked, Vector2 mousePos)
     {
         if (_isHolding) return;
+        if (isClicked)
+        {
+            if (_selectableList.Count > 0 && _selectableList[0].SeletableType == ESeletableType.Unit)
+            {
+                foreach (ISelectable seletable in _selectableList)
+                {
+                    EnemyUnit target = null;
+                    Collider2D collider = Physics2D.OverlapPoint(Camera.main.ScreenToWorldPoint(mousePos), _whatIsEnemyUnit);
+                    if (collider != null)
+                    {
+                        Debug.Log(collider.name);
+                        if (collider.TryGetComponent(out EnemyUnit enemyUnit))
+                        {
+                            target = enemyUnit;
+                        }
+                    }
+                    if (seletable is AllyUnit unit)
+                    {
+                        if (target != null)
+                        {
+                            unit.target = target.transform;
+                            unit.StateMachine.ChangeState(EAllyUnitState.Chase);
+                        }
+                        else
+                        {
+                            unit.MovementCompo.SetDestination(Camera.main.ScreenToWorldPoint(mousePos));
+                            unit.StateMachine.ChangeState(EAllyUnitState.Move);
+                        }
+                    }
+                }
+            }
+        }
+
     }
 
     private void HandleOnMouseClickEvent(bool isClicked, Vector2 mousePos)
@@ -42,7 +77,7 @@ public class SelectManager : MonoSingleton<SelectManager>
         if (isClicked)
         {
             _startPos = Camera.main.ScreenToWorldPoint(mousePos);
-            _seletableList.ForEach(x => x.Deselect());
+            _selectableList.ForEach(x => x.Deselect());
             _selectVisualizer.gameObject.SetActive(true);
             HandleOnMouseMoveEvent(mousePos);
         }
@@ -61,8 +96,8 @@ public class SelectManager : MonoSingleton<SelectManager>
         float diffY = Mathf.Abs(_startPos.y - visualizerPos.y);
         _selectVisualizer.localScale = new Vector2(diffX * 2, diffY * 2);
         _selectVisualizer.position = visualizerPos;
-        _seletableList.ForEach(x => x.Deselect());
-        _seletableList.Clear();
+        _selectableList.ForEach(x => x.Deselect());
+        _selectableList.Clear();
         int count = Physics2D.OverlapBox(_selectVisualizer.position, _selectVisualizer.localScale, 0, new ContactFilter2D { layerMask = _whatIsSeletable, useLayerMask = true, useTriggers = true }, _colliders);
         if (count > 0)
         {
@@ -70,27 +105,27 @@ public class SelectManager : MonoSingleton<SelectManager>
             {
                 if (_colliders[i].TryGetComponent(out ISelectable selectable))
                 {
-                    if (_seletableList.Count > 0)
+                    if (_selectableList.Count > 0)
                     {
-                        if (_seletableList[0].SeletableType == selectable.SeletableType)
+                        if (_selectableList[0].SeletableType == selectable.SeletableType)
                         {
                             selectable.Select();
-                            _seletableList.Add(selectable);
+                            _selectableList.Add(selectable);
                         }
                     }
                     else
                     {
                         selectable.Select();
-                        _seletableList.Add(selectable);
+                        _selectableList.Add(selectable);
                     }
                 }
             }
         }
     }
 
-    public List<ISelectable> GetSeletedObject()
+    public List<ISelectable> GetSeletedObjects()
     {
-        return _seletableList;
+        return _selectableList;
     }
 
 }

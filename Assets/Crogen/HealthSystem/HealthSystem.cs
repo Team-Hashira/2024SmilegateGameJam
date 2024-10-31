@@ -2,10 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 namespace Crogen.HealthSystem
 {
-    public abstract class HealthSystem : MonoBehaviour
+    public abstract class HealthSystem : MonoBehaviour//, IDamageable
     {
         [Header("Hp Option")]
         [SerializeField] private float _hp = 100.0f;
