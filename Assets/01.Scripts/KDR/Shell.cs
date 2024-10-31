@@ -1,7 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class Shell : MonoBehaviour
+public class Shell : Projectile
 {
     [SerializeField] private DamageCaster2D _damageCaster;
 

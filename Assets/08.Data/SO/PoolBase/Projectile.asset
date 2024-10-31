@@ -13,9 +13,27 @@ MonoBehaviour:
   m_Name: Projectile
   m_EditorClassIdentifier: 
   pairs:
-  - poolType: Laser
-    prefab: {fileID: 6543864170153164985, guid: 83d30d581312ed14583851e189665bca, type: 3}
+  - poolType: EnemyLaser
+    prefab: {fileID: 6543864170153164985, guid: 0c585494b83fd78478210aa28029670b, type: 3}
     poolCount: 10
-  - poolType: Bullet
-    prefab: {fileID: 5207047788275376318, guid: e08c2956c219d5e4a8ff7d304aab0deb, type: 3}
+  - poolType: EnemyBullet
+    prefab: {fileID: 5207047788275376318, guid: dc9e13dfe97678941acedd1eb5853d09, type: 3}
+    poolCount: 10
+  - poolType: PlayerBullet
+    prefab: {fileID: 5207047788275376318, guid: 0d16f28e7bf0fc942b9614aa08ca9b7e, type: 3}
+    poolCount: 10
+  - poolType: PlayerLaser
+    prefab: {fileID: 6543864170153164985, guid: 0cc100055c8967041a3b2361b47b6a04, type: 3}
+    poolCount: 10
+  - poolType: EnemyBirdPoop
+    prefab: {fileID: 5600311561767564734, guid: bee79edda59686f48b6081b78f052c4d, type: 3}
+    poolCount: 10
+  - poolType: PlayerBirdPoop
+    prefab: {fileID: 5600311561767564734, guid: 8219d40400f836740948db0b6718f698, type: 3}
+    poolCount: 10
+  - poolType: EnemyShell
+    prefab: {fileID: 1444974859025629896, guid: d72425ece671fa144836503f2bfb5bce, type: 3}
+    poolCount: 10
+  - poolType: PlayerShell
+    prefab: {fileID: 1444974859025629896, guid: f11b66601bec1a04a9870e2d66922817, type: 3}
     poolCount: 10

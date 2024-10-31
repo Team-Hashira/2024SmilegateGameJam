@@ -1,6 +1,7 @@
+using Crogen.CrogenPooling;
 using UnityEngine;
 
-public class BirdPoop : MonoBehaviour
+public class BirdPoop : Projectile
 {
     private int _damage;
     private float _delayTime = 0.5f;
