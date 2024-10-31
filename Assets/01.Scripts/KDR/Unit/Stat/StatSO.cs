@@ -10,6 +10,7 @@ public enum EStatType
     Speed,
     DetectRadius,
     AttackRadius,
+    AttackCooltime,
 }
 
 [System.Serializable]
