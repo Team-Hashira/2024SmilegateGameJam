@@ -33,6 +33,7 @@ public class Unit : MonoBehaviour, IPoolingObject, IPointerEnterHandler, IPointe
         VisualPivotTrm = transform.Find("VisualPivot");
         VisualTrm = VisualPivotTrm.Find("Visual");
         RendererCompo = VisualTrm.GetComponent<SpriteRenderer>();
+        RendererCompo.material = Instantiate(RendererCompo.material);
         _components = new Dictionary<Type, IUnitComponent>();
         AddComponentToDictionary();
         ComponentInitialize();
