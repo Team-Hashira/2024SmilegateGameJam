@@ -30,7 +30,7 @@ public class EnemyUnitStateMachine
         foreach (EEnemyUnitState stateEum in Enum.GetValues(typeof(EEnemyUnitState)))
         {
             string enumName = stateEum.ToString();
-            Type t = Type.GetType("Unit" + enumName + "State");
+            Type t = Type.GetType("EnemyUnit" + enumName + "State");
             State state = Activator.CreateInstance(t, owner, this) as State;
             stateDictionary.Add(stateEum, state);
         }

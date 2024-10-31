@@ -28,7 +28,7 @@ public class PlayerUnitStateMachine : MonoBehaviour
         foreach (EPlayerUnitState stateEum in Enum.GetValues(typeof(EPlayerUnitState)))
         {
             string enumName = stateEum.ToString();
-            Type t = Type.GetType("Unit" + enumName + "State");
+            Type t = Type.GetType("PlayerUnit" + enumName + "State");
             State state = Activator.CreateInstance(t, owner, this) as State;
             stateDictionary.Add(stateEum, state);
         }
