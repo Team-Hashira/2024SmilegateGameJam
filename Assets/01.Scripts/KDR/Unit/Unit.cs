@@ -42,6 +42,7 @@ public class Unit : MonoBehaviour, IPoolingObject, IPointerEnterHandler, IPointe
         _hpBar.Initialize(GetCompo<HealthSystem>(true));
 
         GetCompo<HealthSystem>(true).OnHPDownEvent += Blink;
+        GetCompo<UnitAttack>(true).OnAttackEndEvent += () => _lastAttackTime = Time.time;
     }
 
     private Sequence _blinkSeq;
