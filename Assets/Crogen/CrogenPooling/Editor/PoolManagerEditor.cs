@@ -20,8 +20,6 @@ public class PoolManagerEditor : Editor
     {
         GUILayout.Label("PoolBase");
 
-        if (_poolManager.poolBaseList == null) return;
-
         for (int i = 0; i < _poolManager.poolBaseList.Count; ++i)
 		{
             for (int j = i+1; j < _poolManager.poolBaseList.Count; ++j)

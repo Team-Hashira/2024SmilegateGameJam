@@ -15,4 +15,6 @@ MonoBehaviour:
   buildingPrefabs:
     _serializedList:
     - Key: 0
-      Value: {fileID: 0}
+      Value: {fileID: 405366366406278665, guid: 68744efcc48a9e942bd33a6eb638089e, type: 3}
+    - Key: 1
+      Value: {fileID: 6550422043351131175, guid: 2819c0680999c3d418b0bd56afaa3a29, type: 3}
