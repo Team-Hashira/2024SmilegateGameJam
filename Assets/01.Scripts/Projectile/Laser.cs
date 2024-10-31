@@ -3,17 +3,16 @@ using UnityEngine;
 
 public class Laser : Projectile
 {
-    [SerializeField] private Material _material;
     [SerializeField] private LineRenderer _lineRenderer;
-    [SerializeField] private DamageCaster _damageCaster;
+    [SerializeField] private DamageCaster2D _damageCaster;
     private readonly int _colorPropertyID = Shader.PropertyToID("_Color");
     
     private void Awake()
     {
         if(_team == TeamType.Blue)
-            _material.SetColor(_colorPropertyID, Color.blue);
+            _lineRenderer.material.SetColor(_colorPropertyID, Color.blue);
         else 
-            _material.SetColor(_colorPropertyID, Color.red);
+            _lineRenderer.material.SetColor(_colorPropertyID, Color.red);
     }
 
     public void Attack(Vector3 target, int damage)
