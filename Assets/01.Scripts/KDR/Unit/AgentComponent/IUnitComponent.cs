@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IAgentComponent
+public interface IUnitComponent
 {
     public void Initialize(Unit agent);
     public void AfterInit();

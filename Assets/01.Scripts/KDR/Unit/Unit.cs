@@ -23,23 +23,20 @@ public class Unit : MonoBehaviour, IPoolingObject
     [SerializeField] private HPBar _hpBar;
     [SerializeField] private LayerMask _targetLayer;
 
-    protected Dictionary<Type, IAgentComponent> _components;
-
+    protected Dictionary<Type, IUnitComponent> _components;
 
     protected virtual void Awake()
     {
         VisualPivotTrm = transform.Find("VisualPivot");
         VisualTrm = VisualPivotTrm.Find("Visual");
-        _components = new Dictionary<Type, IAgentComponent>();
+        _components = new Dictionary<Type, IUnitComponent>();
         AddComponentToDictionary();
         ComponentInitialize();
         ComponentAfterInit();
 
         HealthSystemCompo = GetComponent<HealthSystem>();
         AStarAgentCompo = GetComponent<AstarAgent>();
-        AStarAgentCompo.Initialize(this);
         MovementCompo = GetComponent<UnitMovement>();
-        MovementCompo.Initalize(this);
         _hpBar.Initialize(HealthSystemCompo);
     }
 
@@ -51,9 +48,18 @@ public class Unit : MonoBehaviour, IPoolingObject
         //}
     }
 
+    public bool TargetDetected(out Collider2D targetCollider)
+    {
+        return targetCollider = Physics2D.OverlapCircle(transform.position, Stat.GetStatElement(EStatType.DetectRadius).GetValue(), _targetLayer);
+    }
+    public bool TargetDetected()
+    {
+        return Physics2D.OverlapCircle(transform.position, Stat.GetStatElement(EStatType.DetectRadius).GetValue(), _targetLayer);
+    }
+
     private void AddComponentToDictionary()
     {
-        GetComponentsInChildren<IAgentComponent>(true)
+        GetComponentsInChildren<IUnitComponent>(true)
             .ToList().ForEach(compo => _components.Add(compo.GetType(), compo));
     }
 
@@ -69,7 +75,7 @@ public class Unit : MonoBehaviour, IPoolingObject
 
     public T GetCompo<T>(bool isderived = false) where T : class
     {
-        if (_components.TryGetValue(typeof(T), out IAgentComponent compo))
+        if (_components.TryGetValue(typeof(T), out IUnitComponent compo))
         {
             return compo as T;
         }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Gondr.Astar
 {
-    public class AstarAgent : MonoBehaviour
+    public class AstarAgent : MonoBehaviour, IUnitComponent
     {
         private Unit _owner;
 
@@ -178,6 +178,16 @@ namespace Gondr.Astar
         {
             Vector3Int distance = _destination - pos;
             return distance.magnitude;
+        }
+
+        public void AfterInit()
+        {
+
+        }
+
+        public void Dispose()
+        {
+
         }
 
         #endregion

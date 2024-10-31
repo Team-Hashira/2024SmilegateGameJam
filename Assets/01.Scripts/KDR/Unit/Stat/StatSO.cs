@@ -8,6 +8,8 @@ public enum EStatType
     MaxHealth,
     Damage,
     Speed,
+    DetectRadius,
+    AttackRadius,
 }
 
 [System.Serializable]
@@ -44,6 +46,13 @@ public class StatSO : ScriptableObject
             return statDictionary[statType];
         else
             return null;
+    }
+    public float GetStatValue(EStatType statType)
+    {
+        if (statDictionary.ContainsKey(statType))
+            return statDictionary[statType].GetValue();
+        else
+            return 0;
     }
 
     [ContextMenu("CreateAllStat")]
