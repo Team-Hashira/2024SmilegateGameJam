@@ -41,10 +41,12 @@ public class EnemyUnitChaseState : State
         Collider2D target;
         if (_owner.TargetDetected(out target))
         {
-            if (Vector3.Distance(_owner.transform.position, target.transform.position) < _owner.Stat.GetStatValue(EStatType.AttackRadius) &&
-                _owner.CanAttack())
+            if (Vector3.Distance(_owner.transform.position, target.transform.position) < _owner.Stat.GetStatValue(EStatType.AttackRadius))
             {
-                _stateMachine.ChangeState(EEnemyUnitState.Attack);
+                if (_owner.CanAttack())
+                    _stateMachine.ChangeState(EEnemyUnitState.Attack);
+                else
+                    _stateMachine.ChangeState(EEnemyUnitState.Idle);
             }
             else
             {

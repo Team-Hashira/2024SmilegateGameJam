@@ -7,7 +7,7 @@ public class Shell : MonoBehaviour
 
     public void Init(int damage, Vector2 target)
     {
-        transform.DOJump(target, 2, 1, 1.5f)
+        transform.DOJump(target, 2, 1, 1f).SetEase(Ease.Linear)
             .OnComplete(() =>
             {
                 _damageCaster.CastDamage(damage);

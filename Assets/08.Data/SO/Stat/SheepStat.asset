@@ -10,16 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ed9b17438a6c3c47945e9045002a83e, type: 3}
-  m_Name: TestStat
+  m_Name: SheepStat
   m_EditorClassIdentifier: 
   statInfos:
   - statType: 0
-    defaultValue: 100
+    defaultValue: 50
   - statType: 1
-    defaultValue: 10
+    defaultValue: 15
   - statType: 2
-    defaultValue: 10
+    defaultValue: 4
   - statType: 3
-    defaultValue: 5
+    defaultValue: 9
   - statType: 4
-    defaultValue: 2
+    defaultValue: 6
+  - statType: 5
+    defaultValue: 3
