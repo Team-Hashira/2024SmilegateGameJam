@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class EnemyUnit : Unit
 {
-    private Vector3 _corePos;
-    private bool _isCoreTargeting;
+    public Vector3 CorePos { get; private set; }
+    public bool IsCoreTargeting { get; private set; }
     public EnemyUnitStateMachine StateMachine { get; private set; }
 
     protected override void Awake()
@@ -19,13 +19,13 @@ public class EnemyUnit : Unit
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            StateMachine.ChangeState(EEnemyUnitState.Patrol);
+            SetPath(Vector3.up * 10);
         }
     }
 
     public void SetPath(Vector3 targetPos)
     {
-        _corePos = targetPos;
-        _isCoreTargeting = true;
+        CorePos = targetPos;
+        IsCoreTargeting = true;
     }
 }
