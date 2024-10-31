@@ -24,13 +24,14 @@ public class AttackBuildingModifier : BuildingModifier
     {
         var contactFilter = new ContactFilter2D() { useLayerMask = true, layerMask = _whatIsTarget };
         
-        return Physics2D.OverlapCircle(transform.position, _radius, contactFilter, _targetColliders);
+        return Physics2D.OverlapCircle(transform.position, _radius, contactFilter, _targetColliders) > 0;
     }
 
     private void Fire()
     {
+        if (!FindTargets()) return;
         Laser laser = gameObject.Pop(_laserPoolType, _firePointTrm.position, Quaternion.identity) as Laser;
-        laser.Attack();
+        laser.Attack(_targetColliders[0].transform.position, _damage);
     }
     
     private void Update()
@@ -38,8 +39,7 @@ public class AttackBuildingModifier : BuildingModifier
         _curTime += Time.deltaTime;
         if (_curTime > _delay)
         {
-            if (FindTargets() == true)
-                Fire();        
+            Fire();        
             _curTime = 0f;
         }
     }
