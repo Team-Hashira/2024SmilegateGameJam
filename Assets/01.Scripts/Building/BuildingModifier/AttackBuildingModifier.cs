@@ -24,7 +24,7 @@ public class AttackBuildingModifier : BuildingModifier
     {
         var contactFilter = new ContactFilter2D() { useLayerMask = true, layerMask = _whatIsTarget };
         
-        return Physics2D.OverlapCircle(transform.position, _radius, contactFilter, _targetColliders);
+        return Physics2D.OverlapCircle(transform.position, _radius, contactFilter, _targetColliders) > 0;
     }
 
     private void Fire()
