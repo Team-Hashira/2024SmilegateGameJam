@@ -19,3 +19,7 @@ MonoBehaviour:
     defaultValue: 100
   - statType: 2
     defaultValue: 10
+  - statType: 3
+    defaultValue: 5
+  - statType: 4
+    defaultValue: 2
