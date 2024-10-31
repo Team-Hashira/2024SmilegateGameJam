@@ -56,7 +56,7 @@ public class UnitMovement : MonoBehaviour, IUnitComponent
             Vector3 origin = transform.position;
             Vector3 dir = _path[i] - transform.position;
             if (dir.x < 0)
-                _owner.Flip(-1);
+                예외처리_owner.Flip(-1);
             else
                 _owner.Flip(1);
             while (percent < 1)
