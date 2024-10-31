@@ -18,7 +18,9 @@ public class AttackBuildingModifier : BuildingModifier
     private void Awake()
     {
         _targetColliders = new Collider2D[1];
-    }
+        _owner = GetComponent<Building>();
+
+	}
 
     private bool FindTargets()
     {
@@ -31,13 +33,13 @@ public class AttackBuildingModifier : BuildingModifier
     {
         if (!FindTargets()) return;
         Laser laser = gameObject.Pop(_laserPoolType, _firePointTrm.position, Quaternion.identity) as Laser;
-        laser.Attack(_targetColliders[0].transform.position, _damage);
+        laser.Attack(_targetColliders[0].transform.position, _damage * _owner.GetWorkingUnitsAmount());
     }
     
     private void Update()
     {
         _curTime += Time.deltaTime;
-        if (_curTime > _delay)
+        if (_curTime > _delay+_owner.GetWorkingUnitsAmount())
         {
             Fire();        
             _curTime = 0f;

@@ -17,7 +17,6 @@ public class ResourceManager : MonoSingleton<ResourceManager>
         }
         return null;
     }
-
     
     /// <summary>
     /// 리소스 개수 추가하는 함수
@@ -33,6 +32,7 @@ public class ResourceManager : MonoSingleton<ResourceManager>
         else
         {
             resource.count += count;
+            resource.OnAmountChangedEvent?.Invoke(resource.count.ToString($"000000000"));
         }
     }
     

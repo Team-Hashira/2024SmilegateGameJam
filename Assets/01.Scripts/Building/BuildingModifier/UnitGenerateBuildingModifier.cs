@@ -29,7 +29,7 @@ public class UnitGenerateBuildingModifier : BuildingModifier
     private void Update()
     {
         _curTime += Time.deltaTime;
-        if (_curTime > _delay)
+        if (_curTime > _delay / _owner.GetWorkingUnitsAmount())
         {
             Generate();
             _curTime = 0f;
