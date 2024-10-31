@@ -21,8 +21,6 @@ namespace Crogen.CrogenPooling.SoundPlayer
         {
             GUILayout.Label("Sound Data");
 
-            if (_soundManager.soundDataSOList == null) return;
-
             for (int i = 0; i < _soundManager.soundDataSOList.Count; ++i)
             {
                 for (int j = i + 1; j < _soundManager.soundDataSOList.Count; ++j)

@@ -50,4 +50,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cf3ea6d690b92204e9ee4f37a82d9bb6, type: 2}
   - {fileID: 11400000, guid: 3c58747b498608e49a48d28c5747d20c, type: 2}
   - {fileID: 11400000, guid: e2d60423d6131f14ab3fedd1d6225add, type: 2}
-  poolingPairs: []
+  poolingPairs:
+  - poolType: SoundPlayer
+    prefab: {fileID: 1598646136496023633, guid: 759661f82fd32e24eb329c60f21b235f, type: 3}
+    poolCount: 20

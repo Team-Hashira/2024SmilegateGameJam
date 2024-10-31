@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PigeonSheet_0: -2713283221603642091
+      PigeonSheet_1: 6580818765245588623
+      PigeonSheet_2: 6209001091758176739
+      PigeonSheet_3: -4833670950453693449
+      PigeonSheet_4: 7719232142968102288
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

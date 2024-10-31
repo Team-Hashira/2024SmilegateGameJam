@@ -24,6 +24,7 @@ public class RabbitUnitAttack : UnitAttack
             Bullet bullet = gameObject.Pop(_bullet, _fireTrm.position, Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg))
                  as Bullet;
             bullet.Fire(direction);
+            SoundManager.Instance.PlaySFX("Rabbit_Fire", transform.position);
             yield return new WaitForSeconds(0.2f);
         }
         base.Attack(target);

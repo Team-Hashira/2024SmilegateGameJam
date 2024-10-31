@@ -3121,9 +3121,9 @@ MonoBehaviour:
   _whatIsSeletable:
     serializedVersion: 2
     m_Bits: 1024
-  _whatIsEnemyUnit:
+  _whatIsAllyInteract:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0
 --- !u!1001 &1300139731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7230,39 +7230,74 @@ PrefabInstance:
       propertyPath: m_Name
       value: PoolManager
       objectReference: {fileID: 0}
-    - target: {fileID: 7778224121380966941, guid: f25f65ecb235f2646be0b794e29dad9c, type: 3}
-      propertyPath: poolingPairs.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7778224121380966941, guid: f25f65ecb235f2646be0b794e29dad9c, type: 3}
-      propertyPath: poolingPairs.Array.data[0].prefab
-      value: 
-      objectReference: {fileID: 8935148608253045430, guid: cdcd045eeb323fc418c51a085b2c6875, type: 3}
-    - target: {fileID: 7778224121380966941, guid: f25f65ecb235f2646be0b794e29dad9c, type: 3}
-      propertyPath: poolingPairs.Array.data[1].prefab
-      value: 
-      objectReference: {fileID: 5226081842957769212, guid: 951456c63c047984e9d53fcfc2ca9282, type: 3}
-    - target: {fileID: 7778224121380966941, guid: f25f65ecb235f2646be0b794e29dad9c, type: 3}
-      propertyPath: poolingPairs.Array.data[0].poolType
-      value: LaserHitEffect
-      objectReference: {fileID: 0}
-    - target: {fileID: 7778224121380966941, guid: f25f65ecb235f2646be0b794e29dad9c, type: 3}
-      propertyPath: poolingPairs.Array.data[1].poolType
-      value: ChickenPop
-      objectReference: {fileID: 0}
-    - target: {fileID: 7778224121380966941, guid: f25f65ecb235f2646be0b794e29dad9c, type: 3}
-      propertyPath: poolingPairs.Array.data[0].poolCount
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7778224121380966941, guid: f25f65ecb235f2646be0b794e29dad9c, type: 3}
-      propertyPath: poolingPairs.Array.data[1].poolCount
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f25f65ecb235f2646be0b794e29dad9c, type: 3}
+--- !u!1 &2055635838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2055635840}
+  - component: {fileID: 2055635839}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2055635839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055635838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2d9db043bb069e4ba8e917564100320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundDataSOList:
+  - {fileID: 11400000, guid: 44e51bfdadaef7e44a4240bef83b5e45, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  soundDataList:
+  - name: Bear_Roar
+    type: 1
+    clip: {fileID: 8300000, guid: 63dafaa9c10686a46bdda651f1427d33, type: 3}
+  - name: Chicken_doodle
+    type: 1
+    clip: {fileID: 8300000, guid: cecdd0dc6ee70f144bcc988d928a8abd, type: 3}
+  - name: Duck_Quack
+    type: 1
+    clip: {fileID: 8300000, guid: a37f7c42552da4c4a980afdc89dda9fb, type: 3}
+  - name: Laser
+    type: 1
+    clip: {fileID: 8300000, guid: daa1ef2a75d425346b26f480c43e0f2e, type: 3}
+--- !u!4 &2055635840
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055635838}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &390018244515937739
 GameObject:
   m_ObjectHideFlags: 0
@@ -8023,3 +8058,4 @@ SceneRoots:
   - {fileID: 2004288526}
   - {fileID: 6889863937557918461}
   - {fileID: 1121454125}
+  - {fileID: 2055635840}

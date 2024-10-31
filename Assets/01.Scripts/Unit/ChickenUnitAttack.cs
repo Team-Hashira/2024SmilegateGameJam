@@ -10,6 +10,7 @@ public class ChickenUnitAttack : UnitAttack
     public override void Attack(Transform target)
     {
         gameObject.Pop(_chickenPopType, transform.position, Quaternion.identity);
+        SoundManager.Instance.PlaySFX("Chicken_Doodle", transform.position);
         _damageCaster.CastDamage((int)_owner.Stat.GetStatValue(EStatType.Damage));
         _owner.Push();
         base.Attack(target);
