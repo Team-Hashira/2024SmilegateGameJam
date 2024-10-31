@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57b6947435f2f9d4e977fe3cb609e934, type: 3}
+  m_Name: 02TextNode
+  m_EditorClassIdentifier: 
+  childNodeSO: {fileID: 11400000, guid: 9cd144d56fa1580429ca1596b35fa359, type: 2}
+  elementStartNode: {fileID: 11400000, guid: ba4681e194f24744ab40a383f7edee0e, type: 2}
+  _actorName: "\uCD5C\uC601\uD658"

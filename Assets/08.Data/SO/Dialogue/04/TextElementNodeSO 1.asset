@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da60fd2bdbc2fba40893798b8aea26ee, type: 3}
+  m_Name: TextElementNodeSO 1
+  m_EditorClassIdentifier: 
+  childNodeSO: {fileID: 11400000, guid: c83afa5a8b0f3ba4286e06883544c0de, type: 2}
+  _text: "\n\uCD5C\uC804\uC120\uC758 \uB18D\uC7A5\uC73C\uB85C \uD30C\uACAC\uB418\uB294\uB370"
+  _writeDelay: 0.05
+  _fontScale: 100
+  effectSOList:
+  - {fileID: 11400000, guid: 272497a9d64d28a4a9249f7e4715f97e, type: 2}
+  - {fileID: 11400000, guid: f055b3fa8d478974cb9137db90324b80, type: 2}
