@@ -15,7 +15,6 @@ public class Unit : MonoBehaviour, IPoolingObject
     public AstarAgent AStarAgentCompo { get; protected set; }
     public Collider2D ColliderCompo { get; protected set; }
     public HealthSystem HealthSystemCompo { get; protected set; }
-    public StateMachine StateMachine { get; private set; }
 
     [field:SerializeField] public StatSO Stat { get; private set; }
     public string OriginPoolType { get; set; }
@@ -35,7 +34,6 @@ public class Unit : MonoBehaviour, IPoolingObject
         ComponentInitialize();
         ComponentAfterInit();
 
-        StateMachine = new StateMachine(this);
         HealthSystemCompo = GetComponent<HealthSystem>();
         AStarAgentCompo = GetComponent<AstarAgent>();
         AStarAgentCompo.Initialize(this);
@@ -46,8 +44,6 @@ public class Unit : MonoBehaviour, IPoolingObject
 
     protected virtual void Update()
     {
-        StateMachine.MachineUpdate();
-
         //if (Keyboard.current.kKey.wasPressedThisFrame)
         //{
         //    HealthSystemCompo.Hp -= 10;
@@ -93,11 +89,11 @@ public class Unit : MonoBehaviour, IPoolingObject
 
     public void OnPop()
     {
-        throw new NotImplementedException();
+
     }
 
     public void OnPush()
     {
-        throw new NotImplementedException();
+
     }
 }

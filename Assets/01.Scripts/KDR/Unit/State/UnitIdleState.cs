@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class UnitIdleState : State
 {
-    public UnitIdleState(Unit owner, StateMachine stateMachine) : base(owner, stateMachine)
+    public UnitIdleState(Unit owner, EnemyUnitStateMachine stateMachine) : base(owner, stateMachine)
     {
     }
 
@@ -32,7 +32,7 @@ public class UnitIdleState : State
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            _stateMachine.ChangeState(EUnityState.Patrol);
+            _stateMachine.ChangeState(EEnemyUnitState.Patrol);
         }
     }
 }

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class State
 {
-    protected StateMachine _stateMachine;
+    protected EnemyUnitStateMachine _stateMachine;
     protected Unit _owner;
 
-    public State(Unit owner, StateMachine stateMachine)
+    public State(Unit owner, EnemyUnitStateMachine stateMachine)
     {
         _owner = owner;
         _stateMachine = stateMachine;
