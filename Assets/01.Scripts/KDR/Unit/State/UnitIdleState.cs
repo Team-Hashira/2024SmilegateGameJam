@@ -32,7 +32,7 @@ public class UnitIdleState : State
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            _stateMachine.ChangeState(EUnityState.Move);
+            _stateMachine.ChangeState(EUnityState.Patrol);
         }
     }
 }
