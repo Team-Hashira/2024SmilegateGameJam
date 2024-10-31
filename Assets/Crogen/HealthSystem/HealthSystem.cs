@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Crogen.HealthSystem
 {
-    public abstract class HealthSystem : MonoBehaviour, IUnitComponent//, IDamageable
+    public abstract class HealthSystem : MonoBehaviour, IUnitComponent, IDamageable
     {
         [Header("Hp Option")]
         [SerializeField] private float _hp = 100.0f;
@@ -62,6 +62,17 @@ namespace Crogen.HealthSystem
         }
 
         public void Dispose()
+        {
+
+        }
+
+        public void TakeDamage(float value)
+        {
+            Debug.Log("คว");
+            Hp -= value;
+        }
+
+        public void Heal(float value)
         {
 
         }

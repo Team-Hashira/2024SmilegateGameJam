@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3879295071233781427}
   - component: {fileID: 3583784479882792913}
   - component: {fileID: 7032747941687372550}
+  - component: {fileID: 6811701424674493952}
   m_Layer: 9
   m_Name: EnemyBear
   m_TagString: Untagged
@@ -195,6 +196,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41ff21ca2da2ec4479abc759b149633d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damageCaster: {fileID: 6811701424674493952}
+--- !u!114 &6811701424674493952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853783993595781041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6481a3c94b541ce409c28ab0b2650c45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  excluded: 0
+  allocationCount: 3
+  _whatIsCastable:
+    serializedVersion: 2
+    m_Bits: 1024
+  _usingExcludeCast: 0
+  excludedDamageCasterList: []
+  center: {x: 0, y: 0.33}
+  size: {x: 5, y: 5}
 --- !u!1 &3429957689107984046
 GameObject:
   m_ObjectHideFlags: 0
