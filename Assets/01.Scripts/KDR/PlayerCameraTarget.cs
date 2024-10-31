@@ -13,10 +13,10 @@ public class PlayerCameraTarget : MonoBehaviour
 
     private void Awake()
     {
-        _inputReader.OnMouseRightDownEvent += HandleMouseRightClick;
+        _inputReader.OnRightMouseClickEvent += HandleMouseRightClick;
     }
 
-    private void HandleMouseRightClick(bool isClick)
+    private void HandleMouseRightClick(bool isClick, Vector2 vec)
     {
         _isClicked = isClick;
         if (_isClicked)
@@ -30,7 +30,7 @@ public class PlayerCameraTarget : MonoBehaviour
     {
         if (_isClicked)
         {
-            transform.position = _startPos + (_startMouseWPos - (Vector2)Camera.main.ScreenToWorldPoint(_inputReader.MousePos));
+            transform.position = _startPos + (_startMouseWPos - (Vector2)Camera.main.ScreenToWorldPoint(_inputReader.MousePos)) * 3;
         }
     }
 }
