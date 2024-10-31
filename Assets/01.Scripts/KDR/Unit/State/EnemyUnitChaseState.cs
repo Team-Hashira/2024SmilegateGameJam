@@ -29,7 +29,7 @@ public class EnemyUnitChaseState : State
         if (_seq != null && _seq.IsActive()) _seq.Kill();
 
         _owner.VisualPivotTrm.localEulerAngles = Vector3.one;
-        _owner.VisualPivotTrm.localPosition = new Vector3(0, -0.25f, 0);
+        _owner.VisualPivotTrm.localPosition = new Vector3(0, 0, 0);
     }
 
     public override void StateUpdate()
@@ -44,7 +44,7 @@ public class EnemyUnitChaseState : State
                 _stateMachine.ChangeState(EEnemyUnitState.Idle);
             }
 
-            _owner.GetCompo<UnitMovement>().SetDestination(_enemyUnit.CorePos);
+            _owner.GetCompo<UnitMovement>().SetDestination(target.transform.position);
         }
         else if (_enemyUnit.IsCoreTargeting)
             _stateMachine.ChangeState(EEnemyUnitState.Patrol);

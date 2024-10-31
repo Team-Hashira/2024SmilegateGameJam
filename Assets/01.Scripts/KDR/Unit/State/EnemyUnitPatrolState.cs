@@ -31,7 +31,7 @@ public class EnemyUnitPatrolState : State
         if (_seq != null && _seq.IsActive()) _seq.Kill();
 
         _owner.VisualPivotTrm.localEulerAngles = Vector3.one;
-        _owner.VisualPivotTrm.localPosition = new Vector3(0, -0.25f, 0);
+        _owner.VisualPivotTrm.localPosition = new Vector3(0, 0, 0);
     }
 
     public override void StateUpdate()
