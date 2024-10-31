@@ -11,6 +11,11 @@ namespace Crogen.HealthSystem
         [SerializeField] private float _hp = 100.0f;
         public float maxHp = 100.0f;
 
+        public event Action<float, float> OnHPChangeEvent;
+        public event Action OnHPUpEvent;
+        public event Action OnHPDownEvent;
+        public event Action OnDieEvent;
+
         private void Awake()
         {
             _hp = maxHp;
@@ -22,22 +27,26 @@ namespace Crogen.HealthSystem
             set
             {
                 OnHpChange();
+                OnHPChangeEvent?.Invoke(_hp, value);
                 if (gameObject.activeSelf == true)
                 {
                     if(_hp < value)
                     {
                         OnHpUp();
+                        OnHPUpEvent?.Invoke();
                     }
                     else if (_hp > value)
                     {
                         OnHpDown();
+                        OnHPDownEvent?.Invoke();
                     }
-            
+
                     _hp = value;
                     
                     if (_hp <= 0.1f)
                     {
                         OnDie();
+                        OnDieEvent?.Invoke();
                     }                
                 }
             }
