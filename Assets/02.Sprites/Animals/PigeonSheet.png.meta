@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: d5c4f7e06890a684f8572c6aed1079f8
+guid: 74db3da123c061641be2dea1ac1c1f10
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5336855417275088078
-    second: Chicken_0
+      213: -2713283221603642091
+    second: PigeonSheet_0
+  - first:
+      213: 6580818765245588623
+    second: PigeonSheet_1
+  - first:
+      213: 6209001091758176739
+    second: PigeonSheet_2
+  - first:
+      213: -4833670950453693449
+    second: PigeonSheet_3
+  - first:
+      213: 7719232142968102288
+    second: PigeonSheet_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Chicken_0
+      name: PigeonSheet_0
       rect:
         serializedVersion: 2
-        x: 6
+        x: 5
         y: 0
-        width: 20
-        height: 19
+        width: 22
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +127,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eccfc44e9b1501a40800000000000000
-      internalID: 5336855417275088078
+      spriteID: 5159949194b785ad0800000000000000
+      internalID: -2713283221603642091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PigeonSheet_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 2
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8420b1ecc3c35b50800000000000000
+      internalID: 6580818765245588623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PigeonSheet_2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 1
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e93244a89dca2650800000000000000
+      internalID: 6209001091758176739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PigeonSheet_3
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f3351561e95becb0800000000000000
+      internalID: -4833670950453693449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PigeonSheet_4
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 4
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09d146c5cb8302b60800000000000000
+      internalID: 7719232142968102288
       vertices: []
       indices: 
       edges: []
@@ -134,8 +234,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Chicken_0: 5336855417275088078
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

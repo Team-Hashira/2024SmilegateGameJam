@@ -16,3 +16,6 @@ MonoBehaviour:
   - poolType: LaserHitEffect
     prefab: {fileID: 8935148608253045430, guid: cdcd045eeb323fc418c51a085b2c6875, type: 3}
     poolCount: 20
+  - poolType: ChickenPop
+    prefab: {fileID: 5226081842957769212, guid: 951456c63c047984e9d53fcfc2ca9282, type: 3}
+    poolCount: 5
