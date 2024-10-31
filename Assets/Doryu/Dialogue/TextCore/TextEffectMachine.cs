@@ -25,6 +25,8 @@ namespace Doryu.Dialogue
 
         private Dictionary<Type, TextEffector> _effectorDict;
 
+        public bool IsUIText { get; private set; }
+
         #region TMP
         private Mesh _mesh;
         private Vector3[] _startVertices;
@@ -42,6 +44,7 @@ namespace Doryu.Dialogue
         public TextEffectMachine(TMP_Text tmp)
         {
             _textMesh = tmp;
+            IsUIText = tmp.canvasRenderer != null;
 
             _effectorDict = new Dictionary<Type, TextEffector>();
             foreach (ETextEffectType effectType in Enum.GetValues(typeof(ETextEffectType)))
@@ -63,10 +66,14 @@ namespace Doryu.Dialogue
             _textMesh.text = tagText;
             _textMesh.ForceMeshUpdate();
 
+            if (IsUIText)
+                _mesh = _textMesh.mesh;
+            else
+                _mesh = _textMesh.textInfo.meshInfo[0].mesh;
+
             _startVertices = _textMesh.mesh.vertices;
             _startColors = _textMesh.mesh.colors;
 
-            _mesh = _textMesh.mesh;
             _vertices = _mesh.vertices;
             _colors = _mesh.colors;
 
@@ -77,12 +84,20 @@ namespace Doryu.Dialogue
 
             _mesh.vertices = _vertices;
             _mesh.colors = _colors;
-            _textMesh.canvasRenderer.SetMesh(_mesh);
+
+            if (IsUIText)
+                _textMesh.canvasRenderer.SetMesh(_mesh);
+            else
+                _textMesh.UpdateGeometry(_mesh, 0);
         }
 
         public void TextUpdate()
         {
-            _mesh = _textMesh.mesh;
+            if (IsUIText)
+                _mesh = _textMesh.mesh;
+            else
+                _mesh = _textMesh.textInfo.meshInfo[0].mesh;
+
             _vertices = _mesh.vertices;
             _colors = _mesh.colors;
 
@@ -98,7 +113,11 @@ namespace Doryu.Dialogue
 
             _mesh.vertices = _vertices;
             _mesh.colors = _colors;
-            _textMesh.canvasRenderer.SetMesh(_mesh);
+
+            if (IsUIText)
+                _textMesh.canvasRenderer.SetMesh(_mesh);
+            else
+                _textMesh.UpdateGeometry(_mesh, 0);
         }
     }
 
