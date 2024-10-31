@@ -83,6 +83,7 @@ public class SelectManager : MonoSingleton<SelectManager>
         }
         else
         {
+            _selectableList.ForEach(x => x.Select());
             _selectVisualizer.gameObject.SetActive(false);
         }
     }
@@ -96,7 +97,6 @@ public class SelectManager : MonoSingleton<SelectManager>
         float diffY = Mathf.Abs(_startPos.y - visualizerPos.y);
         _selectVisualizer.localScale = new Vector2(diffX * 2, diffY * 2);
         _selectVisualizer.position = visualizerPos;
-        _selectableList.ForEach(x => x.Deselect());
         _selectableList.Clear();
         int count = Physics2D.OverlapBox(_selectVisualizer.position, _selectVisualizer.localScale, 0, new ContactFilter2D { layerMask = _whatIsSeletable, useLayerMask = true, useTriggers = true }, _colliders);
         if (count > 0)
@@ -109,13 +109,11 @@ public class SelectManager : MonoSingleton<SelectManager>
                     {
                         if (_selectableList[0].SeletableType == selectable.SeletableType)
                         {
-                            selectable.Select();
                             _selectableList.Add(selectable);
                         }
                     }
                     else
                     {
-                        selectable.Select();
                         _selectableList.Add(selectable);
                     }
                 }
