@@ -14,8 +14,6 @@ public class EnemyUnitIdleState : State
     {
         base.Enter();
 
-        Debug.Log("Idle");
-
         _enemyUnit = _owner as EnemyUnit;
 
         _owner.VisualTrm.localScale = new Vector3(0.95f, 1.05f);

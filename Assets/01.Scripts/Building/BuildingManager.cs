@@ -16,6 +16,7 @@ public enum BuildingType
 
 public class BuildingManager : MonoSingleton<BuildingManager>
 {
+    public Transform playerCore;
     [HideInInspector] public List<Building> currentBuildingList;
     [field:SerializeField] public BuildingPrefabDataSO BuildingPrefabDataSO { get; private set; }
     public Building CreateBuilding(BuildingType buildingType, Vector2 position)

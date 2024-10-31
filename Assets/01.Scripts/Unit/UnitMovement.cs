@@ -1,7 +1,7 @@
+using Gondr.Astar;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 
 public class UnitMovement : MonoBehaviour, IUnitComponent
@@ -41,9 +41,8 @@ public class UnitMovement : MonoBehaviour, IUnitComponent
     {
         if (_moveCoroutine != null)
             StopCoroutine(_moveCoroutine);
-        _owner.AStarAgentCompo.SetDestination(position);
-        _path = _owner.AStarAgentCompo.GetPath();
-        if (_path.Count == 0) return;
+        _owner.GetCompo<AstarAgent>().SetDestination(position);
+        _path = _owner.GetCompo<AstarAgent>().GetPath();
         _path[_path.Count - 1] += (Vector3)UnityEngine.Random.insideUnitCircle * 0.8f;
         _moveCoroutine = StartCoroutine(MoveCoroutine());
     }
@@ -56,7 +55,7 @@ public class UnitMovement : MonoBehaviour, IUnitComponent
             Vector3 origin = transform.position;
             Vector3 dir = _path[i] - transform.position;
             if (dir.x < 0)
-                예외처리_owner.Flip(-1);
+                _owner.Flip(-1);
             else
                 _owner.Flip(1);
             while (percent < 1)
