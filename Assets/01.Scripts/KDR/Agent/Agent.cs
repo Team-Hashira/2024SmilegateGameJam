@@ -5,18 +5,29 @@ using UnityEngine;
 
 public class Agent : MonoBehaviour
 {
+    public Transform VisualPivotTrm { get; private set; }
     public Transform VisualTrm { get; private set; }
     [field:SerializeField] public StatSO Stat { get; private set; }
+
+    protected StateMachine StateMachine { get; private set; }
 
     protected Dictionary<Type, IAgentComponent> _components;
 
     protected virtual void Awake()
     {
-        VisualTrm = transform.Find("Visual");
+        VisualPivotTrm = transform.Find("VisualPivot");
+        VisualTrm = VisualPivotTrm.Find("Visual");
         _components = new Dictionary<Type, IAgentComponent>();
         AddComponentToDictionary();
         ComponentInitialize();
         ComponentAfterInit();
+
+        StateMachine = new StateMachine(this);
+    }
+
+    protected virtual void Update()
+    {
+        StateMachine.MachineUpdate();
     }
 
     private void AddComponentToDictionary()

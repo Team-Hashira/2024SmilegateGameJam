@@ -22,7 +22,7 @@ public class StateMachine
         => stateDictionary[_currentStateEnum];
     public EUnityState CurrentStateEnum => _currentStateEnum;
 
-    public void Init(Agent owner)
+    public StateMachine(Agent owner)
     {
         _owner = owner;
 
@@ -30,7 +30,7 @@ public class StateMachine
         {
             string enumName = stateEum.ToString();
             Type t = Type.GetType("Unit" + enumName + "State");
-            State state = Activator.CreateInstance(t, owner, this, enumName) as State;
+            State state = Activator.CreateInstance(t, owner, this) as State;
             stateDictionary.Add(stateEum, state);
         }
         CurrentState.Enter();
