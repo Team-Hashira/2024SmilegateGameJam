@@ -734,7 +734,32 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Icon_Potion_R_0: -5472931847263231318
+      Icon_Potion_R_1: 3384543554474837776
+      Icon_Potion_R_10: 6272078241059848036
+      Icon_Potion_R_11: 1715559505777353306
+      Icon_Potion_R_12: 6362340489365855430
+      Icon_Potion_R_13: 2912144111601317750
+      Icon_Potion_R_14: 6535994948559427489
+      Icon_Potion_R_15: 634605138639351694
+      Icon_Potion_R_16: -4707320864772721521
+      Icon_Potion_R_17: -3181633725630094512
+      Icon_Potion_R_18: 7480270208657968284
+      Icon_Potion_R_19: 6967495350413076718
+      Icon_Potion_R_2: 7723990887492010523
+      Icon_Potion_R_20: -8925550670330523788
+      Icon_Potion_R_21: -8958373068307937313
+      Icon_Potion_R_22: 1457815351134184040
+      Icon_Potion_R_23: 5223611163722334978
+      Icon_Potion_R_24: -6396492343172955155
+      Icon_Potion_R_3: 6836895659000148364
+      Icon_Potion_R_4: 5447649293493520611
+      Icon_Potion_R_5: -535514145064863907
+      Icon_Potion_R_6: 2842891533562442940
+      Icon_Potion_R_7: 6198657103418551403
+      Icon_Potion_R_8: -3556069993713183710
+      Icon_Potion_R_9: 4694206980104323991
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
