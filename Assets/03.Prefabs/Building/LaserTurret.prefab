@@ -99,6 +99,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaserTurret
       objectReference: {fileID: 0}
+    - target: {fileID: 894682101679629768, guid: 68744efcc48a9e942bd33a6eb638089e, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 9063013702801274379, guid: 68744efcc48a9e942bd33a6eb638089e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.615

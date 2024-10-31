@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ranch
       objectReference: {fileID: 0}
+    - target: {fileID: 894682101679629768, guid: 68744efcc48a9e942bd33a6eb638089e, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 1701154339150102689, guid: 68744efcc48a9e942bd33a6eb638089e, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -126,3 +130,5 @@ MonoBehaviour:
   _generatePointTrm: {fileID: 2033534914434124911}
   unitPoolType: 0
   canGenerate: 1
+  _isEnemyGenerater: 0
+  _departUnitCount: 0

@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ore
       objectReference: {fileID: 0}
+    - target: {fileID: 894682101679629768, guid: 68744efcc48a9e942bd33a6eb638089e, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 1701154339150102689, guid: 68744efcc48a9e942bd33a6eb638089e, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -158,7 +162,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _delay: 0.1
   _damage: 1
+  _radius: 1.5
   _whatIsTarget:
     serializedVersion: 2
     m_Bits: 0
-  _damageCaster: {fileID: 0}
+  _firePointTrm: {fileID: 0}
+  _laserPoolType: 0
