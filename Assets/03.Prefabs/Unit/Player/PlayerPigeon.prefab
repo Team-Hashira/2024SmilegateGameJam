@@ -200,6 +200,9 @@ MonoBehaviour:
   _targetLayer:
     serializedVersion: 2
     m_Bits: 512
+  _name: "\uBE44\uB458\uAE30"
+  _description: "\uB3C4\uB85C\uAC00\uB098 \uBAA8\uB85C\uAC00\uB098 \uC11C\uC6B8\uB9CC
+    \uAC00\uBA74 \uB418\uB294\uAC70 \uC544\uB2C8\uACA0\uC5B4\uC694?"
   target: {fileID: 0}
   whatIsEnemy:
     serializedVersion: 2

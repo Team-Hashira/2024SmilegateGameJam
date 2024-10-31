@@ -144,6 +144,8 @@ MonoBehaviour:
   _targetLayer:
     serializedVersion: 2
     m_Bits: 512
+  _name: "\uC591"
+  _description: "\uC5C4\uC900"
   target: {fileID: 0}
   whatIsEnemy:
     serializedVersion: 2

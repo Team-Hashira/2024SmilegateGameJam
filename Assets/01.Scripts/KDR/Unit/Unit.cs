@@ -23,6 +23,8 @@ public class Unit : MonoBehaviour, IPoolingObject, IPointerEnterHandler, IPointe
 
     [SerializeField] private HPBar _hpBar;
     [SerializeField] private LayerMask _targetLayer;
+    [SerializeField] protected string _name;
+    [SerializeField] protected string _description;
 
     protected Dictionary<Type, IUnitComponent> _components;
 
