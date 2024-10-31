@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4186694626214840752}
   - component: {fileID: 5335446487510399690}
   - component: {fileID: 3881046365073960729}
+  - component: {fileID: 8431726066894914734}
   m_Layer: 10
   m_Name: PlayerBear
   m_TagString: Untagged
@@ -50,11 +51,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1fad7376b55f0a4a8923d376db7a260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Stat>k__BackingField: {fileID: 0}
-  _hpBar: {fileID: 0}
+  <Stat>k__BackingField: {fileID: 11400000, guid: d91906670d117cc42b4f89bdda554685, type: 2}
+  _hpBar: {fileID: 8602078669103899739}
   _targetLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   target: {fileID: 0}
 --- !u!114 &6283073105856270049
 MonoBehaviour:
@@ -183,6 +184,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &8431726066894914734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357179558588821401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41ff21ca2da2ec4479abc759b149633d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &783563314830788970
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,3 +394,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5562886734784200327, guid: fc93c591220d94244ae87ddfbb2ec06f, type: 3}
   m_PrefabInstance: {fileID: 4866054222504526199}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8602078669103899739 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3812027093928846636, guid: fc93c591220d94244ae87ddfbb2ec06f, type: 3}
+  m_PrefabInstance: {fileID: 4866054222504526199}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa069e83274ad0c48bd63f74c39a187e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

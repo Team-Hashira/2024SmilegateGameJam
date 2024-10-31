@@ -46,7 +46,8 @@ public class EnemyUnitPatrolState : State
         {
             _stateMachine.ChangeState(EEnemyUnitState.Chase);
         }
-        else if (Vector3.Distance(_owner.transform.position, _enemyUnit.CorePos) < _owner.Stat.GetStatValue(EStatType.AttackRadius))
-            _stateMachine.ChangeState(EEnemyUnitState.Idle);
+        else if (Vector3.Distance(_owner.transform.position, _enemyUnit.CorePos) < _owner.Stat.GetStatValue(EStatType.AttackRadius) &&
+            _owner.CanAttack())
+            _stateMachine.ChangeState(EEnemyUnitState.Attack);
     }
 }

@@ -28,6 +28,8 @@ public class Unit : MonoBehaviour, IPoolingObject, IPointerEnterHandler, IPointe
 
     protected Dictionary<Type, IUnitComponent> _components;
 
+    private float _lastAttackTime;
+
     protected virtual void Awake()
     {
         VisualPivotTrm = transform.Find("VisualPivot");
@@ -46,12 +48,19 @@ public class Unit : MonoBehaviour, IPoolingObject, IPointerEnterHandler, IPointe
         _hpBar.Initialize(HealthSystemCompo);
     }
 
+    private void Start()
+    {
+        GetCompo<UnitAttack>().OnAttackEndEvent += Attack;
+    }
+
+    private void Attack()
+    {
+        _lastAttackTime = Time.time;
+    }
+
     protected virtual void Update()
     {
-        //if (Keyboard.current.kKey.wasPressedThisFrame)
-        //{
-        //    HealthSystemCompo.Hp -= 10;
-        //}
+
     }
 
     public bool TargetDetected(out Collider2D targetCollider)
@@ -79,6 +88,11 @@ public class Unit : MonoBehaviour, IPoolingObject, IPointerEnterHandler, IPointe
         _components.Values.ToList().ForEach(compo => compo.AfterInit());
     }
 
+    public bool CanAttack()
+    {
+        return _lastAttackTime + Stat.GetStatValue(EStatType.AttackCooltime) < Time.time;
+    }
+
     public T GetCompo<T>(bool isderived = false) where T : class
     {
         if (_components.TryGetValue(typeof(T), out IUnitComponent compo))
@@ -103,6 +117,7 @@ public class Unit : MonoBehaviour, IPoolingObject, IPointerEnterHandler, IPointe
 
     private void OnDestroy()
     {
+        GetCompo<UnitAttack>().OnAttackEndEvent -= Attack;
         _components.Values.ToList().ForEach(compo => compo.Dispose());
     }
 
