@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9063013702801274379}
   - component: {fileID: 405366366406278665}
   - component: {fileID: 7960920275933466248}
+  - component: {fileID: 1926418188531294629}
   m_Layer: 0
   m_Name: SampleBuilding
   m_TagString: Untagged
@@ -46,7 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00a26c04f672a3b4a94ccc6e8c3b1fb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <healthSystem>k__BackingField: {fileID: 1926418188531294629}
   buildingType: 0
+  _destroyEffectPoolType: 0
 --- !u!61 &7960920275933466248
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -93,6 +96,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &1926418188531294629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894682101679629768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4d63ed3b4335db4cbe4d5cd4a40b09b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hp: 100
+  maxHp: 100
+  hpChangeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  hpUpEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  hpDownEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  dieEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5645030183979224356
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,7 +149,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.911, z: 0}
-  m_LocalScale: {x: 1, y: 1.822, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9063013702801274379}

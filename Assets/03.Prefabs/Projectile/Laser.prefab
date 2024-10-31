@@ -52,7 +52,7 @@ MonoBehaviour:
   _usingExcludeCast: 1
   excludedDamageCasterList: []
   center: {x: 0, y: 0}
-  radius: 0.1
+  radius: 0.5
 --- !u!1 &5222971210151309677
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 525d2f54d57661f44a382dc405aa42f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _duration: 0.25
   _team: 0
-  _material: {fileID: 2100000, guid: 05c035e749d2a8148a16987fdc964bd7, type: 2}
   _lineRenderer: {fileID: 3283871793069967737}
   _damageCaster: {fileID: 763492689301547433}

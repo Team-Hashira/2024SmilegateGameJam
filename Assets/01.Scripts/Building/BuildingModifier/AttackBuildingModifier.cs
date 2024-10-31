@@ -13,7 +13,7 @@ public class AttackBuildingModifier : BuildingModifier
     [SerializeField] private LayerMask _whatIsTarget;
     [SerializeField] private Transform _firePointTrm;
     [SerializeField] private ProjectilePoolType _laserPoolType;
-    [SerializeField] private Collider2D[] _targetColliders;
+    private Collider2D[] _targetColliders;
 
     private void Awake()
     {
