@@ -1,8 +1,3 @@
-using System;
-using System.Numerics;
-using Unity.VisualScripting;
-using UnityEngine;
-
 namespace Doryu.Dialogue
 {
     public class ElementNodeSO : SingleNodeSO

@@ -6,7 +6,8 @@ using UnityEngine;
 public enum EUnityState
 {
     Idle,
-    Move, 
+    Patrol,
+    Chase,
     Attack,
     Die
 }
@@ -17,12 +18,12 @@ public class StateMachine
         = new Dictionary<EUnityState, State>();
 
     private EUnityState _currentStateEnum;
-    private Agent _owner;
+    private Unit _owner;
     public State CurrentState
         => stateDictionary[_currentStateEnum];
     public EUnityState CurrentStateEnum => _currentStateEnum;
 
-    public StateMachine(Agent owner)
+    public StateMachine(Unit owner)
     {
         _owner = owner;
 

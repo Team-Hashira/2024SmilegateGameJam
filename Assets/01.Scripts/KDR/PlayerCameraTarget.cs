@@ -1,8 +1,6 @@
 using Crogen.PowerfulInput;
-using System;
 using Unity.Cinemachine;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerCameraTarget : MonoBehaviour
 {

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class UnitDieState : State
 {
-    public UnitDieState(Agent owner, StateMachine stateMachine) : base(owner, stateMachine)
+    public UnitDieState(Unit owner, StateMachine stateMachine) : base(owner, stateMachine)
     {
     }
 

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4594475931231484792
+--- !u!1 &6543864170153164985
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1975784276251521159}
-  - component: {fileID: 7778224121380966941}
+  - component: {fileID: 7720205715210645081}
+  - component: {fileID: 672447808835190051}
   m_Layer: 0
-  m_Name: PoolManager
+  m_Name: Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1975784276251521159
+--- !u!4 &7720205715210645081
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4594475931231484792}
+  m_GameObject: {fileID: 6543864170153164985}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -32,24 +32,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7778224121380966941
+--- !u!114 &672447808835190051
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4594475931231484792}
+  m_GameObject: {fileID: 6543864170153164985}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4889394bf6bb225498bb7f1958045b37, type: 3}
+  m_Script: {fileID: 11500000, guid: 525d2f54d57661f44a382dc405aa42f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolBaseList:
-  - {fileID: 11400000, guid: 265ad6051dcb556468478c955d01d7a6, type: 2}
-  - {fileID: 11400000, guid: a78d63a7d78cc2b4290ba00019d47002, type: 2}
-  - {fileID: 11400000, guid: cf3ea6d690b92204e9ee4f37a82d9bb6, type: 2}
-  - {fileID: 11400000, guid: 3c58747b498608e49a48d28c5747d20c, type: 2}
-  poolingPairs:
-  - poolType: Bear
-    prefab: {fileID: 6593177416496475999, guid: 87b5eb6e4db0cc1499c8ee305c184a5f, type: 3}
-    poolCount: 10
+  _team: 0
+  _material: {fileID: 0}
+  _lineRenderer: {fileID: 0}
