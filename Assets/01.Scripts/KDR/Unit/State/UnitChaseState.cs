@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class UnitChaseState : State
 {
-    public UnitChaseState(Unit owner, StateMachine stateMachine) : base(owner, stateMachine)
+    public UnitChaseState(Unit owner, EnemyUnitStateMachine stateMachine) : base(owner, stateMachine)
     {
     }
 

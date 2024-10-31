@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EUnityState
+public enum EEnemyUnitState
 {
     Idle,
     Patrol,
@@ -12,22 +12,22 @@ public enum EUnityState
     Die
 }
 
-public class StateMachine
+public class EnemyUnitStateMachine
 {
-    private Dictionary<EUnityState, State> stateDictionary
-        = new Dictionary<EUnityState, State>();
+    private Dictionary<EEnemyUnitState, State> stateDictionary
+        = new Dictionary<EEnemyUnitState, State>();
 
-    private EUnityState _currentStateEnum;
+    private EEnemyUnitState _currentStateEnum;
     private Unit _owner;
     public State CurrentState
         => stateDictionary[_currentStateEnum];
-    public EUnityState CurrentStateEnum => _currentStateEnum;
+    public EEnemyUnitState CurrentStateEnum => _currentStateEnum;
 
-    public StateMachine(Unit owner)
+    public EnemyUnitStateMachine(Unit owner)
     {
         _owner = owner;
 
-        foreach (EUnityState stateEum in Enum.GetValues(typeof(EUnityState)))
+        foreach (EEnemyUnitState stateEum in Enum.GetValues(typeof(EEnemyUnitState)))
         {
             string enumName = stateEum.ToString();
             Type t = Type.GetType("Unit" + enumName + "State");
@@ -42,7 +42,7 @@ public class StateMachine
         CurrentState.StateUpdate();
     }
 
-    public void ChangeState(EUnityState newState)
+    public void ChangeState(EEnemyUnitState newState)
     {
         if (stateDictionary.ContainsKey(newState) == false) return;
 
