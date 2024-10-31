@@ -1,9 +1,10 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 public class ResourceManager : MonoSingleton<ResourceManager>
 {
     public List<Resource> resourceList;
-    
+
     /// <summary>
     /// 리소스 가져오는 함수
     /// </summary>
@@ -14,14 +15,7 @@ public class ResourceManager : MonoSingleton<ResourceManager>
             if(resourceList[i].type == type)
                 return resourceList[i];
         }
-
-        Resource errorResource = new Resource()
-        {
-            type = ResourceType.None,
-            count = -1
-        };
-        
-        return errorResource;
+        return null;
     }
 
     
