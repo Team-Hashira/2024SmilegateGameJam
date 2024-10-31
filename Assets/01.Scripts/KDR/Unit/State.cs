@@ -5,9 +5,9 @@ using UnityEngine;
 public class State
 {
     protected StateMachine _stateMachine;
-    protected Agent _owner;
+    protected Unit _owner;
 
-    public State(Agent owner, StateMachine stateMachine)
+    public State(Unit owner, StateMachine stateMachine)
     {
         _owner = owner;
         _stateMachine = stateMachine;

@@ -1,17 +1,27 @@
+using Crogen.HealthSystem;
+using Gondr.Astar;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class Agent : MonoBehaviour
+public class Unit : MonoBehaviour
 {
     public Transform VisualPivotTrm { get; private set; }
     public Transform VisualTrm { get; private set; }
+    public UnitMovement MovementCompo { get; protected set; }
+    public AstarAgent AStarAgentCompo { get; protected set; }
+    public Collider2D ColliderCompo { get; protected set; }
+    public HealthSystem HealthSystemCompo { get; protected set; }
+    public StateMachine StateMachine { get; private set; }
+
     [field:SerializeField] public StatSO Stat { get; private set; }
 
-    protected StateMachine StateMachine { get; private set; }
+    [SerializeField] private HPBar _hpBar;
 
     protected Dictionary<Type, IAgentComponent> _components;
+
 
     protected virtual void Awake()
     {
@@ -23,11 +33,22 @@ public class Agent : MonoBehaviour
         ComponentAfterInit();
 
         StateMachine = new StateMachine(this);
+        HealthSystemCompo = GetComponent<HealthSystem>();
+        AStarAgentCompo = GetComponent<AstarAgent>();
+        AStarAgentCompo.Initialize(this);
+        MovementCompo = GetComponent<UnitMovement>();
+        MovementCompo.Initalize(this);
+        _hpBar.Initialize(HealthSystemCompo);
     }
 
     protected virtual void Update()
     {
         StateMachine.MachineUpdate();
+
+        //if (Keyboard.current.kKey.wasPressedThisFrame)
+        //{
+        //    HealthSystemCompo.Hp -= 10;
+        //}
     }
 
     private void AddComponentToDictionary()

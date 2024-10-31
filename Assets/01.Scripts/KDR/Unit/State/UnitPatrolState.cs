@@ -1,9 +1,9 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class UnitMoveState : State
+public class UnitPatrolState : State
 {
-    public UnitMoveState(Agent owner, StateMachine stateMachine) : base(owner, stateMachine)
+    public UnitPatrolState(Unit owner, StateMachine stateMachine) : base(owner, stateMachine)
     {
     }
 

@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class UnitAttackState : State
+public class UnitChaseState : State
 {
-    public UnitAttackState(Agent owner, StateMachine stateMachine) : base(owner, stateMachine)
+    public UnitChaseState(Unit owner, StateMachine stateMachine) : base(owner, stateMachine)
     {
     }
 

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class UnitIdleState : State
 {
-    public UnitIdleState(Agent owner, StateMachine stateMachine) : base(owner, stateMachine)
+    public UnitIdleState(Unit owner, StateMachine stateMachine) : base(owner, stateMachine)
     {
     }
 

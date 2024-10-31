@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IAgentComponent
 {
-    public void Initialize(Agent agent);
+    public void Initialize(Unit agent);
     public void AfterInit();
     public void Dispose();
 }
