@@ -14,6 +14,8 @@ public class EnemyUnitChaseState : State
     {
         base.Enter();
 
+        Debug.Log("Chase");
+
         _enemyUnit = _owner as EnemyUnit;
 
         _owner.VisualPivotTrm.localEulerAngles = new Vector3(0, 0, -7f);
@@ -25,6 +27,8 @@ public class EnemyUnitChaseState : State
     public override void Exit()
     {
         base.Exit();
+
+        _owner.GetCompo<UnitMovement>().StopMove();
 
         if (_seq != null && _seq.IsActive()) _seq.Kill();
 
@@ -39,12 +43,14 @@ public class EnemyUnitChaseState : State
         Collider2D target;
         if (_owner.TargetDetected(out target))
         {
-            if (Vector3.Distance(_owner.transform.position, _enemyUnit.CorePos) < _owner.Stat.GetStatValue(EStatType.AttackRadius))
+            if (Vector3.Distance(_owner.transform.position, target.transform.position) < _owner.Stat.GetStatValue(EStatType.AttackRadius))
             {
                 _stateMachine.ChangeState(EEnemyUnitState.Idle);
             }
-
-            _owner.GetCompo<UnitMovement>().SetDestination(target.transform.position);
+            else
+            {
+                _owner.GetCompo<UnitMovement>().SetDestination(target.transform.position);
+            }
         }
         else if (_enemyUnit.IsCoreTargeting)
             _stateMachine.ChangeState(EEnemyUnitState.Patrol);

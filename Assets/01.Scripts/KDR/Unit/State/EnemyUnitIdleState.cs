@@ -14,6 +14,8 @@ public class EnemyUnitIdleState : State
     {
         base.Enter();
 
+        Debug.Log("Idle");
+
         _enemyUnit = _owner as EnemyUnit;
 
         _owner.VisualTrm.localScale = new Vector3(0.95f, 1.05f);
@@ -33,10 +35,16 @@ public class EnemyUnitIdleState : State
     {
         base.StateUpdate();
 
-        if (_enemyUnit.IsCoreTargeting &&
-            Vector3.Distance(_owner.transform.position, _enemyUnit.CorePos) >= 1f)
+        Collider2D target;
+        if (_owner.TargetDetected(out target))
         {
-            _stateMachine.ChangeState(EEnemyUnitState.Patrol);
+            if (Vector3.Distance(_owner.transform.position, target.transform.position) >= _owner.Stat.GetStatValue(EStatType.AttackRadius))
+                _stateMachine.ChangeState(EEnemyUnitState.Chase);
+        }
+        else if(_enemyUnit.IsCoreTargeting)
+        {
+            if (Vector3.Distance(_owner.transform.position, _enemyUnit.CorePos) >= _owner.Stat.GetStatValue(EStatType.AttackRadius))
+                _stateMachine.ChangeState(EEnemyUnitState.Patrol);
         }
     }
 }

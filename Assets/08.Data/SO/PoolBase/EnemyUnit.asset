@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: EnemyUnit
   m_EditorClassIdentifier: 
   pairs:
-  - poolType: Bear
-    prefab: {fileID: 6593177416496475999, guid: 87b5eb6e4db0cc1499c8ee305c184a5f, type: 3}
+  - poolType: EnemyBear
+    prefab: {fileID: 853783993595781041, guid: 7b598ce450322f94a8c58b731f387bdb, type: 3}
     poolCount: 10
