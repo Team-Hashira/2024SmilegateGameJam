@@ -1,9 +1,8 @@
 using System;
 using UnityEngine;
 
-public class ResourceProduceBuilding : MonoBehaviour
+public class ResourceProduceBuildingModifier : BuildingModifier
 {
-    private Building _owner;
     public bool canProduce = true;
 
     public ResourceType resourceType;    
@@ -23,7 +22,7 @@ public class ResourceProduceBuilding : MonoBehaviour
     {
         _curTime += Time.deltaTime;
         OnProducePercentEvent?.Invoke(_curTime/_delay);
-        if (_curTime >= _delay)
+        if (_curTime > _delay)
         {
             _curTime = 0.0f;
             ResourceManager.Instance.AddResource(resourceType, amount);   
