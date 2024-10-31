@@ -16,6 +16,11 @@ public class EnemyUnit : Unit
     {
         base.Update();
         StateMachine.MachineUpdate();
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            StateMachine.ChangeState(EEnemyUnitState.Patrol);
+        }
     }
 
     public void SetPath(Vector3 targetPos)

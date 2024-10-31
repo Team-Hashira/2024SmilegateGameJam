@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pairs:
   - poolType: Laser
-    prefab: {fileID: 0}
-    poolCount: 20
+    prefab: {fileID: 6543864170153164985, guid: 83d30d581312ed14583851e189665bca, type: 3}
+    poolCount: 10
