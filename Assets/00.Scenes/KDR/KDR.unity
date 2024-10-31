@@ -899,6 +899,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyRabbit
       objectReference: {fileID: 0}
+    - target: {fileID: 4404739018813746650, guid: 87abbc8d58990ff45bed7371476ae28c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
