@@ -29,8 +29,9 @@ public class AttackBuildingModifier : BuildingModifier
 
     private void Fire()
     {
+        if (!FindTargets()) return;
         Laser laser = gameObject.Pop(_laserPoolType, _firePointTrm.position, Quaternion.identity) as Laser;
-        laser.Attack();
+        laser.Attack(_targetColliders[0].transform.position, _damage);
     }
     
     private void Update()
@@ -38,8 +39,7 @@ public class AttackBuildingModifier : BuildingModifier
         _curTime += Time.deltaTime;
         if (_curTime > _delay)
         {
-            if (FindTargets() == true)
-                Fire();        
+            Fire();        
             _curTime = 0f;
         }
     }
