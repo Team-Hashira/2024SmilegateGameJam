@@ -6,7 +6,7 @@ public class UnitGenerateBuildingModifier : BuildingModifier
     [SerializeField] private float _delay;
     private float _curTime = 0f;
     [SerializeField] private Transform _generatePointTrm;
-    public UnitPoolType unitPoolType;
+    public EnemyUnitPoolType unitPoolType;
     public bool canGenerate = true;
     
     private void Generate()
