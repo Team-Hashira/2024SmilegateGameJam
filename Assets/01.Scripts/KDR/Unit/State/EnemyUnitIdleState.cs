@@ -29,10 +29,5 @@ public class EnemyUnitIdleState : State
     public override void StateUpdate()
     {
         base.StateUpdate();
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            _stateMachine.ChangeState(EEnemyUnitState.Patrol);
-        }
     }
 }

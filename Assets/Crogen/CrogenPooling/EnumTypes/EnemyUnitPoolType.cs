@@ -1,6 +1,6 @@
 namespace Crogen.CrogenPooling
 {
-    public enum UnitPoolType
+    public enum EnemyUnitPoolType
     {
         Bear, 
     }
