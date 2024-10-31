@@ -959,7 +959,41 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      UI_Inventory_0: -6715934915461066560
+      UI_Inventory_1: -6393602414033911923
+      UI_Inventory_10: -8806920083737983248
+      UI_Inventory_11: -5394363074202939758
+      UI_Inventory_12: -6779835641455441185
+      UI_Inventory_13: -8680946408589594714
+      UI_Inventory_14: 2059431101634595817
+      UI_Inventory_15: -6028458576937567523
+      UI_Inventory_16: 3761101860638144144
+      UI_Inventory_17: -641812459558760658
+      UI_Inventory_18: -902088128324273250
+      UI_Inventory_19: 7541304125974233474
+      UI_Inventory_2: -629285997367597692
+      UI_Inventory_20: 9221753325384652385
+      UI_Inventory_21: 4867125054011831070
+      UI_Inventory_22: 334990607788055975
+      UI_Inventory_23: 2878113218977601042
+      UI_Inventory_24: -6133848154808367273
+      UI_Inventory_25: 7537174046165172535
+      UI_Inventory_26: -8152766622311974033
+      UI_Inventory_27: 5910790500410834576
+      UI_Inventory_28: -8771678036184905844
+      UI_Inventory_29: -2771129444255804714
+      UI_Inventory_3: 1751377230862687454
+      UI_Inventory_30: 3344470551196850577
+      UI_Inventory_31: -2580382726367587301
+      UI_Inventory_32: 5634441723950493753
+      UI_Inventory_33: 1927578052489181100
+      UI_Inventory_4: -8330901290318907508
+      UI_Inventory_5: -1338114639088784418
+      UI_Inventory_6: -4221407035816881188
+      UI_Inventory_7: -4771714300890253711
+      UI_Inventory_8: -2344287773224434082
+      UI_Inventory_9: -7667800201698636278
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
