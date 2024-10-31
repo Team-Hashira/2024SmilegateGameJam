@@ -15,7 +15,7 @@ public class PlayerCameraTarget : MonoBehaviour
 
     private void Awake()
     {
-        _inputReader.MouseRightDown += HandleMouseRightClick;
+        _inputReader.OnMouseRightDownEvent += HandleMouseRightClick;
     }
 
     private void HandleMouseRightClick(bool isClick)

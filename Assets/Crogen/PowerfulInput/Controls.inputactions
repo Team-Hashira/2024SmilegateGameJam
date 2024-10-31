@@ -27,42 +27,24 @@
                     "name": "Attack",
                     "type": "Button",
                     "id": "ba14dfe1-f2aa-4737-94d4-b9f8a17c2f92",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "MousePos",
-                    "type": "Value",
-                    "id": "b3732840-f79f-49d7-b527-169b783e62d4",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "MouseLeftClick",
-                    "type": "Button",
-                    "id": "78f49c56-460b-41c5-9e9a-3aaa165b8240",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MouseRightClick",
+                    "name": "Mouse",
                     "type": "Button",
-                    "id": "939c246a-b56f-4462-8555-16eb36c68ca1",
+                    "id": "2c8e1516-dc3a-4a2e-89b3-814f144625e5",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MosueDelta",
+                    "name": "MouseMove",
                     "type": "Value",
-                    "id": "7c8a4d49-4782-4b32-8fef-2ff56b8a6bf5",
+                    "id": "7c6af79b-fb33-40c2-8fb8-394f28bb0dec",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -160,45 +142,23 @@
                 },
                 {
                     "name": "",
-                    "id": "cb0bbc12-1038-4038-990c-436761a95932",
+                    "id": "b23e94cb-3d4f-496a-957f-5a37045c4540",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mouse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e4c42009-cfc4-4cd5-965d-fbac8a8cdcd9",
                     "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MousePos",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1ed48aa3-277c-426d-8bce-4aa8a7c491b8",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";KeyMouse",
-                    "action": "MouseLeftClick",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "97a3da7a-2835-4059-aa01-60f53c808a6c",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MouseRightClick",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "898b9c34-85d8-4200-bf48-43e020b0916c",
-                    "path": "<Mouse>/delta",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";KeyMouse",
-                    "action": "MosueDelta",
+                    "action": "MouseMove",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -212,7 +172,7 @@
                     "name": "MouseClick",
                     "type": "Button",
                     "id": "fc274dc2-f1ee-49d2-8203-386a5c0bbcf1",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -233,22 +193,5 @@
             ]
         }
     ],
-    "controlSchemes": [
-        {
-            "name": "KeyMouse",
-            "bindingGroup": "KeyMouse",
-            "devices": [
-                {
-                    "devicePath": "<Keyboard>",
-                    "isOptional": false,
-                    "isOR": false
-                },
-                {
-                    "devicePath": "<Mouse>",
-                    "isOptional": false,
-                    "isOR": false
-                }
-            ]
-        }
-    ]
+    "controlSchemes": []
 }

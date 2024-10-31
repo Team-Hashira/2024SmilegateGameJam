@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Unit : MonoBehaviour
+public class Unit : MonoBehaviour, ISelectable
 {
     public UnitMovement MovementCompo { get; protected set; }
     public AstarAgent AStarAgentCompo { get; protected set; }
     public Collider2D ColliderCompo { get; protected set; }
     public HealthSystem HealthSystemCompo { get; protected set; }
-
+    public ESeletableType SeletableType { get => ESeletableType.Unit; }
+    [SerializeField]
+    private Transform _selectVisualizer;
     [SerializeField]
     private HPBar _hpBar;
 
@@ -38,5 +40,13 @@ public class Unit : MonoBehaviour
         }
     }
 
-    
+    public void Select()
+    {
+        _selectVisualizer.gameObject.SetActive(true);
+    }
+
+    public void Deselect()
+    {
+        _selectVisualizer.gameObject.SetActive(false);
+    }
 }

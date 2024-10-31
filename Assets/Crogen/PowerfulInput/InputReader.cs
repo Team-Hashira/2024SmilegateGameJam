@@ -8,14 +8,14 @@ namespace Crogen.PowerfulInput
     public class InputReader : ScriptableObject, Controls.IPlayerActions
     {
         #region Input Event
-
-        public event Action<Vector3> MoveEvent;
-        public event Action<Vector2> MosueDelta;
-        public event Action<bool> MouseLeftDown;
-        public event Action<bool> MouseRightDown;
-        public event Action DashEvent;
-        public event Action AttackEvent;
-
+        public event Action<Vector3> OnMoveEvent;
+        public event Action<Vector2> OnMosueDeltaEvent;
+        public event Action<bool> OnMouseLeftDownEvent;
+        public event Action<bool> OnMouseRightDownEvent;
+        public event Action OnDashEvent;
+        public event Action OnAttackEvent;
+        public event Action<bool, Vector2> OnMouseClickEvent;
+        public event Action<Vector2> OnMouseMoveEvent;
         #endregion
 
         public Vector2 MousePos { get; private set; }
@@ -39,45 +39,58 @@ namespace Crogen.PowerfulInput
 
         public void OnDash(InputAction.CallbackContext context)
         {
-            if(context.performed)
-                DashEvent?.Invoke();
+            if (context.performed)
+                OnDashEvent?.Invoke();
         }
 
         public void OnMove(InputAction.CallbackContext context)
         {
-            MoveEvent?.Invoke(context.ReadValue<Vector3>());
+            OnMoveEvent?.Invoke(context.ReadValue<Vector3>());
         }
 
         public void OnAttack(InputAction.CallbackContext context)
         {
-            if(context.performed)
-                AttackEvent?.Invoke();
+            if (context.performed)
+                OnAttackEvent?.Invoke();
         }
 
         public void OnMousePos(InputAction.CallbackContext context)
         {
-            MousePos = context.ReadValue<Vector2>();
         }
 
         public void OnMouseLeftClick(InputAction.CallbackContext context)
         {
             if (context.performed)
-                MouseLeftDown?.Invoke(true);
+                OnMouseLeftDownEvent?.Invoke(true);
             if (context.canceled)
-                MouseLeftDown?.Invoke(false);
+                OnMouseLeftDownEvent?.Invoke(false);
         }
 
         public void OnMouseRightClick(InputAction.CallbackContext context)
         {
             if (context.performed)
-                MouseRightDown?.Invoke(true);
+                OnMouseRightDownEvent?.Invoke(true);
             if (context.canceled)
-                MouseRightDown?.Invoke(false);
+                OnMouseRightDownEvent?.Invoke(false);
         }
 
         public void OnMosueDelta(InputAction.CallbackContext context)
         {
-            MosueDelta?.Invoke(context.ReadValue<Vector2>());
+            OnMosueDeltaEvent?.Invoke(context.ReadValue<Vector2>());
+        }
+
+        public void OnMouse(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+                OnMouseClickEvent?.Invoke(true, MousePos);
+            else if(context.canceled)
+                OnMouseClickEvent?.Invoke(false, MousePos); 
+        }
+
+        public void OnMouseMove(InputAction.CallbackContext context)
+        {
+            MousePos = context.ReadValue<Vector2>();
+            OnMouseMoveEvent?.Invoke(MousePos);
         }
     }
 }
