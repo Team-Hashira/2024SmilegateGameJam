@@ -14,6 +14,8 @@ public class EnemyUnitPatrolState : State
     {
         base.Enter();
 
+        Debug.Log("Patrol");
+
         _enemyUnit = _owner as EnemyUnit;
 
         _owner.VisualPivotTrm.localEulerAngles = new Vector3(0, 0, -7f);
@@ -28,6 +30,8 @@ public class EnemyUnitPatrolState : State
     {
         base.Exit();
 
+        _owner.GetCompo<UnitMovement>().StopMove();
+
         if (_seq != null && _seq.IsActive()) _seq.Kill();
 
         _owner.VisualPivotTrm.localEulerAngles = Vector3.one;
@@ -38,14 +42,11 @@ public class EnemyUnitPatrolState : State
     {
         base.StateUpdate();
 
-        if (Vector3.Distance(_owner.transform.position, _enemyUnit.CorePos) < _owner.Stat.GetStatValue(EStatType.AttackRadius))
-        {
-            _stateMachine.ChangeState(EEnemyUnitState.Idle);
-        }
-
         if (_owner.TargetDetected())
         {
             _stateMachine.ChangeState(EEnemyUnitState.Chase);
         }
+        else if (Vector3.Distance(_owner.transform.position, _enemyUnit.CorePos) < _owner.Stat.GetStatValue(EStatType.AttackRadius))
+            _stateMachine.ChangeState(EEnemyUnitState.Idle);
     }
 }
