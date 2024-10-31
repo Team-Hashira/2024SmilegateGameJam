@@ -13,10 +13,11 @@ GameObject:
   - component: {fileID: 6283073105856270049}
   - component: {fileID: 8310394407364775169}
   - component: {fileID: 4186694626214840752}
+  - component: {fileID: 8552215684468042624}
   - component: {fileID: 5335446487510399690}
   - component: {fileID: 3881046365073960729}
   m_Layer: 10
-  m_Name: PlayerBear
+  m_Name: AllyBear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,12 +51,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1fad7376b55f0a4a8923d376db7a260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Stat>k__BackingField: {fileID: 0}
-  _hpBar: {fileID: 0}
+  <Stat>k__BackingField: {fileID: 11400000, guid: 4267fe3586f5f9b4a8379d86a9ae8163, type: 2}
+  _hpBar: {fileID: 8602078669103899739}
   _targetLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   target: {fileID: 0}
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &6283073105856270049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,6 +114,18 @@ MonoBehaviour:
   dieEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8552215684468042624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357179558588821401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41ff21ca2da2ec4479abc759b149633d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &5335446487510399690
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -238,7 +254,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 068afc9cfa4d32145a2e1b81a32f1a71, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -381,3 +397,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5562886734784200327, guid: fc93c591220d94244ae87ddfbb2ec06f, type: 3}
   m_PrefabInstance: {fileID: 4866054222504526199}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8602078669103899739 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3812027093928846636, guid: fc93c591220d94244ae87ddfbb2ec06f, type: 3}
+  m_PrefabInstance: {fileID: 4866054222504526199}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa069e83274ad0c48bd63f74c39a187e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
