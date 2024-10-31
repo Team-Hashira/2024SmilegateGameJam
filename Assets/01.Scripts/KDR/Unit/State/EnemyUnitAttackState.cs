@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class UnitAttackState : State
+public class EnemyUnitAttackState : State
 {
-    public UnitAttackState(Unit owner, EnemyUnitStateMachine stateMachine) : base(owner, stateMachine)
+    public EnemyUnitAttackState(Unit owner, EnemyUnitStateMachine stateMachine) : base(owner, stateMachine)
     {
     }
 
