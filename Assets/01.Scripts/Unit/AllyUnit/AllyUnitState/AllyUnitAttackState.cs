@@ -10,8 +10,8 @@ public class AllyUnitAttackState : AllyUnitState
     public override void Enter()
     {
         base.Enter();
-        _owner.GetCompo<UnitAttack>().Attack((_owner.target.position - _owner.transform.position).normalized);
-        _owner.GetCompo<UnitAttack>().OnAttackEndEvent += HandleOnAttackEndEvent;
+        _owner.GetCompo<UnitAttack>(true).Attack(_owner.target);
+        _owner.GetCompo<UnitAttack>(true).OnAttackEndEvent += HandleOnAttackEndEvent;
     }
 
     private void HandleOnAttackEndEvent()
@@ -21,7 +21,7 @@ public class AllyUnitAttackState : AllyUnitState
 
     public override void Exit()
     {
-        _owner.GetCompo<UnitAttack>().OnAttackEndEvent -= HandleOnAttackEndEvent;
+        _owner.GetCompo<UnitAttack>(true).OnAttackEndEvent -= HandleOnAttackEndEvent;
         base.Exit();
     }
 }

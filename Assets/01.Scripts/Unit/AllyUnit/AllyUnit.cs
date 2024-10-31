@@ -4,6 +4,7 @@ public class AllyUnit : Unit, ISelectable
 {
     public ESeletableType SeletableType => ESeletableType.Unit;
     public Transform target;
+    public LayerMask whatIsEnemy;
     public AllyUnitStateMachine StateMachine { get; protected set; }
 
     protected override void Awake()

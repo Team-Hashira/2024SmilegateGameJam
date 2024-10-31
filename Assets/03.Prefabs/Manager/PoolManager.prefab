@@ -49,7 +49,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a78d63a7d78cc2b4290ba00019d47002, type: 2}
   - {fileID: 11400000, guid: cf3ea6d690b92204e9ee4f37a82d9bb6, type: 2}
   - {fileID: 11400000, guid: 3c58747b498608e49a48d28c5747d20c, type: 2}
-  poolingPairs:
-  - poolType: Bear
-    prefab: {fileID: 6593177416496475999, guid: 87b5eb6e4db0cc1499c8ee305c184a5f, type: 3}
-    poolCount: 10
+  - {fileID: 11400000, guid: e2d60423d6131f14ab3fedd1d6225add, type: 2}
+  poolingPairs: []

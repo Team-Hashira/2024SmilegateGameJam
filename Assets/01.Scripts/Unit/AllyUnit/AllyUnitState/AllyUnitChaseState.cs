@@ -6,6 +6,7 @@ public class AllyUnitChaseState : AllyUnitState
     public AllyUnitChaseState(AllyUnit owner, AllyUnitStateMachine stateMachine) : base(owner, stateMachine)
     {
         _attackTime = owner.Stat.GetStatValue(EStatType.AttackCooltime);
+        _colliders = new Collider2D[1];
     }
 
     private Sequence _seq;
@@ -16,10 +17,20 @@ public class AllyUnitChaseState : AllyUnitState
     private float _attackTime;
     private float _attackTimer = 0;
 
+    private Collider2D[] _colliders;
+
     public override void Enter()
     {
         base.Enter();
 
+        if(_owner.target == null) // 공격 했는데 애가 죽었네? 어머나
+        {
+            int count = Physics2D.OverlapCircle(_owner.transform.position, _owner.Stat.GetStatValue(EStatType.DetectRadius), new ContactFilter2D() { layerMask = _owner.whatIsEnemy, useLayerMask = true, useTriggers = true }, _colliders);
+            if(count > 0)
+            {
+                _owner.target = _colliders[0].transform;
+            }
+        }
         _owner.VisualPivotTrm.localEulerAngles = new Vector3(0, 0, -7f);
         _seq = DOTween.Sequence();
         _seq.Append(_owner.VisualPivotTrm.DOLocalRotate(new Vector3(0, 0, 7f), 0.3f).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo));
@@ -36,20 +47,32 @@ public class AllyUnitChaseState : AllyUnitState
     public override void StateUpdate()
     {
         base.StateUpdate();
+        if (_owner.target == null) // 공격 하기 전에 얘가 죽었다
+        {
+            int count = Physics2D.OverlapCircle(_owner.transform.position, _owner.Stat.GetStatValue(EStatType.DetectRadius), new ContactFilter2D() { layerMask = _owner.whatIsEnemy, useLayerMask = true, useTriggers = true }, _colliders);
+            if (count > 0)
+            {
+                _owner.target = _colliders[0].transform;
+            }
+        }
         _pathfindingTimer += Time.deltaTime;
         _attackTimer += Time.deltaTime;
+        float distance = Vector2.Distance(_owner.target.position, _owner.transform.position);
+        if (_attackTimer > _attackTime && distance < _owner.Stat.GetStatValue(EStatType.AttackRadius))
+        {
+            _owner.GetCompo<UnitMovement>().StopMove();
+            _stateMachine.ChangeState(EAllyUnitState.Attack);
+            _attackTimer = 0;
+        }
         if (_pathfindingTimer > _pathfindingTime)
         {
             _owner.GetCompo<UnitMovement>().SetDestination(_owner.target.position);
             _pathfindingTimer = 0;
         }
-        float distance = Vector2.Distance(_owner.target.position, _owner.transform.position);
-        if (_attackTimer > _attackTime && distance < _owner.Stat.GetStatValue(EStatType.AttackRadius))
+        if (distance < _owner.Stat.GetStatValue(EStatType.AttackRadius) - 1f)
         {
-            _stateMachine.ChangeState(EAllyUnitState.Attack);
-            _attackTimer = 0;
+            _owner.GetCompo<UnitMovement>().StopMove();
         }
-        // todo : 스탯에 따라 공격 범위 안에 들어오면 공격 하 기 기기기기긱긱
     }
 
     public override void Exit()

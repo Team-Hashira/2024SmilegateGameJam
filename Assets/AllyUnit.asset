@@ -10,12 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef843ff4ebdeee344a631d7c1ad9917f, type: 3}
-  m_Name: Projectile
+  m_Name: AllyUnit
   m_EditorClassIdentifier: 
-  pairs:
-  - poolType: Laser
-    prefab: {fileID: 6543864170153164985, guid: 83d30d581312ed14583851e189665bca, type: 3}
-    poolCount: 10
-  - poolType: Bullet
-    prefab: {fileID: 5207047788275376318, guid: e08c2956c219d5e4a8ff7d304aab0deb, type: 3}
-    poolCount: 10
+  pairs: []
