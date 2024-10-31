@@ -17,7 +17,6 @@ public class BearUnitAttack : UnitAttack
             .Append(_owner.VisualPivotTrm.DOMove(position + direction * 1.5f, 0.1f).SetEase(Ease.OutBounce))
             .AppendCallback(() =>
             {
-                Debug.Log("½Ãµµ");
                 _damageCaster.CastDamage((int)_owner.Stat.GetStatValue(EStatType.Damage));
             })
             .Append(_owner.VisualPivotTrm.DOLocalMove(Vector2.zero, 0.3f))

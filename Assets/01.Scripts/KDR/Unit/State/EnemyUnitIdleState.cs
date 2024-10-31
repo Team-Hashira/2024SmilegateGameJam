@@ -38,6 +38,9 @@ public class EnemyUnitIdleState : State
         {
             if (Vector3.Distance(_owner.transform.position, target.transform.position) >= _owner.Stat.GetStatValue(EStatType.AttackRadius))
                 _stateMachine.ChangeState(EEnemyUnitState.Chase);
+            else if (_owner.CanAttack())
+                _stateMachine.ChangeState(EEnemyUnitState.Attack);
+
         }
         else if(_enemyUnit.IsCoreTargeting)
         {

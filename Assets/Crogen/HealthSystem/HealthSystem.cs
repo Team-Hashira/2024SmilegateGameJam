@@ -68,7 +68,6 @@ namespace Crogen.HealthSystem
 
         public void TakeDamage(float value)
         {
-            Debug.Log("คว");
             Hp -= value;
         }
 

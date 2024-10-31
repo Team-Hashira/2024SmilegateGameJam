@@ -7,6 +7,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Crogen.CrogenPooling;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements.Experimental;
+using DG.Tweening;
 
 public class Unit : MonoBehaviour, IPoolingObject, IPointerEnterHandler, IPointerExitHandler
 {
@@ -38,11 +40,19 @@ public class Unit : MonoBehaviour, IPoolingObject, IPointerEnterHandler, IPointe
         ComponentAfterInit();
 
         _hpBar.Initialize(GetCompo<HealthSystem>(true));
+
+        GetCompo<HealthSystem>(true).OnHPDownEvent += Blink;
     }
 
-    private void Start()
+    private Sequence _blinkSeq;
+    private void Blink()
     {
+        if (_blinkSeq != null && _blinkSeq.IsActive()) _blinkSeq.Kill();
+        _blinkSeq = DOTween.Sequence();
 
+        _blinkSeq.AppendCallback(() => RendererCompo.material.SetFloat("_IsBlink", 1));
+        _blinkSeq.AppendInterval(0.1f);
+        _blinkSeq.AppendCallback(() => RendererCompo.material.SetFloat("_IsBlink", 0));
     }
 
     protected virtual void Update()
@@ -107,6 +117,7 @@ public class Unit : MonoBehaviour, IPoolingObject, IPointerEnterHandler, IPointe
 
     private void OnDestroy()
     {
+        GetCompo<HealthSystem>(true).OnHPDownEvent -= Blink;
         _components.Values.ToList().ForEach(compo => compo.Dispose());
     }
 
