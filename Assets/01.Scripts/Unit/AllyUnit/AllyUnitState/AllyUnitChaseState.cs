@@ -57,16 +57,21 @@ public class AllyUnitChaseState : AllyUnitState
         }
         _pathfindingTimer += Time.deltaTime;
         _attackTimer += Time.deltaTime;
+        float distance = Vector2.Distance(_owner.target.position, _owner.transform.position);
+        if (_attackTimer > _attackTime && distance < _owner.Stat.GetStatValue(EStatType.AttackRadius))
+        {
+            _owner.GetCompo<UnitMovement>().StopMove();
+            _stateMachine.ChangeState(EAllyUnitState.Attack);
+            _attackTimer = 0;
+        }
         if (_pathfindingTimer > _pathfindingTime)
         {
             _owner.GetCompo<UnitMovement>().SetDestination(_owner.target.position);
             _pathfindingTimer = 0;
         }
-        float distance = Vector2.Distance(_owner.target.position, _owner.transform.position);
-        if (_attackTimer > _attackTime && distance < _owner.Stat.GetStatValue(EStatType.AttackRadius))
+        if (distance < _owner.Stat.GetStatValue(EStatType.AttackRadius) - 1f)
         {
-            _stateMachine.ChangeState(EAllyUnitState.Attack);
-            _attackTimer = 0;
+            _owner.GetCompo<UnitMovement>().StopMove();
         }
     }
 

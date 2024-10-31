@@ -6,7 +6,7 @@ public abstract class UnitAttack : MonoBehaviour, IUnitComponent
 {
     protected Unit _owner;
     public event Action OnAttackEndEvent;
-    public virtual void Attack(Vector2 direction)
+    public virtual void Attack(Transform target)
     {
         OnAttackEndEvent?.Invoke();
     }
