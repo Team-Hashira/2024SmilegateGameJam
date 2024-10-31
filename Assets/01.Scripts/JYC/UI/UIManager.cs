@@ -12,6 +12,7 @@ public class UIManager : MonoSingleton<UIManager>
     [SerializeField] private Canvas _defaultCanvas;
     [SerializeField] private Canvas _dieCanvas;
     [SerializeField] private Canvas _upgradeCanvas;
+    [SerializeField] private Canvas _selectBuildingCanvas;
 
     [SerializeField] private Image _escPanel;
     [SerializeField] private Image _unitManagementPanel;
@@ -85,6 +86,11 @@ public class UIManager : MonoSingleton<UIManager>
                 descriptionComponent.text = description;
             }
         }
+    }
+
+    public void SelectBuildingCanvas(bool state)
+    {
+        _selectBuildingCanvas.gameObject.SetActive(state);
     }
 
     public void UnitManagementPanelOff()
