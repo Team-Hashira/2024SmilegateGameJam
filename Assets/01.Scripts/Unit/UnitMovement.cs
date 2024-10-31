@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitMovement : MonoBehaviour
+public class UnitMovement : MonoBehaviour, IUnitComponent
 {
     private Unit _owner;
     private List<Vector3> _path;
@@ -12,9 +12,19 @@ public class UnitMovement : MonoBehaviour
 
     private Coroutine _moveCoroutine;
 
-    public void Initalize(Unit owner)
+    public void AfterInit()
     {
-        _owner = owner;
+
+    }
+
+    public void Dispose()
+    {
+
+    }
+
+    public void Initialize(Unit agent)
+    {
+        _owner = agent;
     }
 
     public void SetDestination(Vector3 position)
