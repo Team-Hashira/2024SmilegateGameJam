@@ -10,10 +10,15 @@ namespace Crogen.PowerfulInput
         #region Input Event
 
         public event Action<Vector3> MoveEvent;
+        public event Action<Vector2> MosueDelta;
+        public event Action<bool> MouseLeftDown;
+        public event Action<bool> MouseRightDown;
         public event Action DashEvent;
         public event Action AttackEvent;
 
         #endregion
+
+        public Vector2 MousePos { get; private set; }
 
         private Controls _controls;
 
@@ -47,6 +52,32 @@ namespace Crogen.PowerfulInput
         {
             if(context.performed)
                 AttackEvent?.Invoke();
+        }
+
+        public void OnMousePos(InputAction.CallbackContext context)
+        {
+            MousePos = context.ReadValue<Vector2>();
+        }
+
+        public void OnMouseLeftClick(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+                MouseLeftDown?.Invoke(true);
+            if (context.canceled)
+                MouseLeftDown?.Invoke(false);
+        }
+
+        public void OnMouseRightClick(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+                MouseRightDown?.Invoke(true);
+            if (context.canceled)
+                MouseRightDown?.Invoke(false);
+        }
+
+        public void OnMosueDelta(InputAction.CallbackContext context)
+        {
+            MosueDelta?.Invoke(context.ReadValue<Vector2>());
         }
     }
 }
