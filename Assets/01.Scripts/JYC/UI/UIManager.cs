@@ -1,5 +1,6 @@
 using System.Net.NetworkInformation;
 using System.Security;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -53,9 +54,9 @@ public class UIManager : MonoSingleton<UIManager>
     {
         _unitManagementPanel.gameObject.SetActive(true);
 
-        Transform childImage = _unitManagementPanel.transform.Find("Image_Unit");
-        Transform childName = _unitManagementPanel.transform.Find("Text_UnitName");
-        Transform childDescription = _unitManagementPanel.transform.Find("Text_UnitDescription");
+        Transform childImage = _unitInfomationPanel.transform.Find("Image_Unit");
+        Transform childName = _unitInfomationPanel.transform.Find("Text_UnitName");
+        Transform childDescription = _unitInfomationPanel.transform.Find("Text_UnitDescription");
 
         if (childImage != null)
         {
@@ -68,7 +69,7 @@ public class UIManager : MonoSingleton<UIManager>
         
         if (childName != null)
         {
-            Text nameComponent = childName.GetComponent<Text>();
+            TextMeshProUGUI nameComponent = childName.GetComponent<TextMeshProUGUI>();
             if (nameComponent != null)
             {
                 nameComponent.text = name;
@@ -77,7 +78,7 @@ public class UIManager : MonoSingleton<UIManager>
         
         if (childDescription != null)
         {
-            Text descriptionComponent = childDescription.GetComponent<Text>();
+            TextMeshProUGUI descriptionComponent = childDescription.GetComponent<TextMeshProUGUI>();
             if (descriptionComponent != null)
             {
                 descriptionComponent.text = description;

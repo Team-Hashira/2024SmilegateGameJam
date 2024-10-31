@@ -21,13 +21,17 @@ public class AllyUnit : Unit, ISelectable
 
     public void Select()
     {
-        Debug.Log("선택됨!@!!");
-
+        Debug.Log(SelectManager.Instance.GetSeletedObjects().Count);
+        if (SelectManager.Instance.GetSeletedObjects().Count == 1)
+        {
+            UIManager.Instance.UnitManagementPanelOn(_name, _description, RendererCompo.sprite);
+            Debug.Log("야야야야야야");
+        }
     }
 
     public void Deselect()
     {
-        // 그 아웃라인 끄기
+        //UIManager.Instance.UnitManagementPanelOff();
     }
 
     public void Move(Vector3 destination)

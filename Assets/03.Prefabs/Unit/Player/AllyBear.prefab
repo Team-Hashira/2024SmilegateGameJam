@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 8431726066894914734}
   - component: {fileID: 4723831400253661327}
   m_Layer: 10
-  m_Name: PlayerBear
+  m_Name: AllyBear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,7 +57,13 @@ MonoBehaviour:
   _targetLayer:
     serializedVersion: 2
     m_Bits: 512
+  _name: "\uACF0"
+  _description: "\uBB34\uAC70\uC6B4 \uBAB8\uC5D0 \uBE44\uD574 \uB3CC\uC9C4 \uB3C4\uC911\uC5D0
+    \uC81C\uB3D9\uC744 \uC798\uD558\uB294 \uD3B8\uC785\uB2C8\uB2E4."
   target: {fileID: 0}
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &6283073105856270049
 MonoBehaviour:
   m_ObjectHideFlags: 0
