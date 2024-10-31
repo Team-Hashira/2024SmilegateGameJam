@@ -12,4 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef843ff4ebdeee344a631d7c1ad9917f, type: 3}
   m_Name: AllyUnit
   m_EditorClassIdentifier: 
-  pairs: []
+  pairs:
+  - poolType: Bear
+    prefab: {fileID: 357179558588821401, guid: 44fed27ac573a7842998e611952e1132, type: 3}
+    poolCount: 5
+  - poolType: Chicken
+    prefab: {fileID: 59185453146881941, guid: ee23d74becbf3e045943dc2808ad5e8c, type: 3}
+    poolCount: 10
+  - poolType: Rabbit
+    prefab: {fileID: 6811971909612391029, guid: 94bd29057e0993f4d8b3e1abbe957612, type: 3}
+    poolCount: 10
