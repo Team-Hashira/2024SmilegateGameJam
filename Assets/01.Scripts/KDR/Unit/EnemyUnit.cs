@@ -19,7 +19,7 @@ public class EnemyUnit : Unit
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            SetPath(Vector3.up * 10);
+            SetPath(Vector3.up * 20);
         }
     }
 

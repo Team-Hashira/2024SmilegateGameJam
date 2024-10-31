@@ -21,6 +21,7 @@ public class Unit : MonoBehaviour, IPoolingObject
     GameObject IPoolingObject.gameObject { get; set; }
 
     [SerializeField] private HPBar _hpBar;
+    [SerializeField] private LayerMask _targetLayer;
 
     protected Dictionary<Type, IAgentComponent> _components;
 
