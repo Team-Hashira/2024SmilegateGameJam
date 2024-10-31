@@ -1,4 +1,6 @@
 using System.Net.NetworkInformation;
+using System.Security;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -47,9 +49,40 @@ public class UIManager : MonoSingleton<UIManager>
         _isBulidCanvas = state;
     }
 
-    public void UnitManagementPanelOn()
+    public void UnitManagementPanelOn(string name, string description, Sprite animalSprite)
     {
         _unitManagementPanel.gameObject.SetActive(true);
+
+        Transform childImage = _unitManagementPanel.transform.Find("Image_Unit");
+        Transform childName = _unitManagementPanel.transform.Find("Text_UnitName");
+        Transform childDescription = _unitManagementPanel.transform.Find("Text_UnitDescription");
+
+        if (childImage != null)
+        {
+            Image imageComponent = childImage.GetComponent<Image>();
+            if (imageComponent != null)
+            {
+                imageComponent.sprite = animalSprite;
+            }
+        }
+        
+        if (childName != null)
+        {
+            Text nameComponent = childName.GetComponent<Text>();
+            if (nameComponent != null)
+            {
+                nameComponent.text = name;
+            }
+        }
+        
+        if (childDescription != null)
+        {
+            Text descriptionComponent = childDescription.GetComponent<Text>();
+            if (descriptionComponent != null)
+            {
+                descriptionComponent.text = description;
+            }
+        }
     }
 
     public void UnitManagementPanelOff()
