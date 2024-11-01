@@ -1402,13 +1402,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2611599007832913204, guid: 688c63ed05fa3df429b5c3a4098d5f12, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -20
+      objectReference: {fileID: 0}
     - target: {fileID: 4442978522573600642, guid: 688c63ed05fa3df429b5c3a4098d5f12, type: 3}
       propertyPath: m_RenderMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4865769550116402593, guid: 688c63ed05fa3df429b5c3a4098d5f12, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5503049119940711048, guid: 688c63ed05fa3df429b5c3a4098d5f12, type: 3}
       propertyPath: m_Name
       value: SelectBuildingCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954775702102693782, guid: 688c63ed05fa3df429b5c3a4098d5f12, type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954775702102693782, guid: 688c63ed05fa3df429b5c3a4098d5f12, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8483400043811513134, guid: 688c63ed05fa3df429b5c3a4098d5f12, type: 3}
       propertyPath: m_UiScaleMode
