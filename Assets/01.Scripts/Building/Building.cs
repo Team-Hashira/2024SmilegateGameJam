@@ -27,6 +27,10 @@ public class Building : MonoBehaviour, ISelectable
     {
         if (SelectManager.Instance.GetSeletedObjects().Count == 1)
         {
+            if(TryGetComponent(out AllyUnitGenerateBuildingModifier modifier))
+            {
+                modifier.UnitGeneratePanelOn();
+            }
             //UIManager.Instance.UnitInfomationPanelOn();
             UIManager.Instance.BulidCanvas(true);
         }

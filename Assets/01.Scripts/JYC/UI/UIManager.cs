@@ -1,3 +1,4 @@
+using Crogen.CrogenPooling;
 using System.Net.NetworkInformation;
 using System.Security;
 using TMPro;
@@ -17,6 +18,7 @@ public class UIManager : MonoSingleton<UIManager>
     [SerializeField] private Image _escPanel;
     [SerializeField] private Image _unitManagementPanel;
     [SerializeField] private Image _unitInfomationPanel;
+    [SerializeField] private Transform _unitGeneratePanel;
 
     private bool _isBulidCanvas = false;
     private bool _isEscPanel = false;
@@ -108,6 +110,16 @@ public class UIManager : MonoSingleton<UIManager>
         _unitInfomationPanel.gameObject.SetActive(false);
     }
 
+    public void UnitGeneratePanelOn()
+    {
+        _unitGeneratePanel.gameObject.SetActive(true);
+    }
+
+    public void UnitGeneratePanelOff()
+    {
+        _unitGeneratePanel.gameObject.SetActive(false);
+    }
+
     public void DieCanvas()
     {
         _dieCanvas.enabled = true;
@@ -120,6 +132,12 @@ public class UIManager : MonoSingleton<UIManager>
         Debug.Log("µÇ³ª?");
     }
 
+    private AllyUnitGenerateBuildingModifier _modifier;
+    public void RegisterUnitGenerateModifier(AllyUnitGenerateBuildingModifier modifier)
+    {
+        _modifier = modifier;
+    }
+
     public void ReTry()
     {
         string sceneName = SceneManager.GetActiveScene().name;
@@ -130,5 +148,12 @@ public class UIManager : MonoSingleton<UIManager>
     public void GoTitleScene()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+    }
+
+    public void AnimalSelect(int type)
+    {
+        AllyUnitPoolType enumType = (AllyUnitPoolType)type;
+        _modifier.Generate(enumType);
+        UnitGeneratePanelOff();
     }
 }
