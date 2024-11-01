@@ -46,3 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 0}
   _inputReader: {fileID: 11400000, guid: 836c45128fe44d04995e0341f944d184, type: 2}
+  _minPos: {x: -60, y: 60}
+  _maxPos: {x: 60, y: 60}
