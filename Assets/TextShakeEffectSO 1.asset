@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc3b3d5f52e0c11438262a5fd8114772, type: 3}
   m_Name: TextShakeEffectSO 1
   m_EditorClassIdentifier: 
-  _applyRangeText: "\\n\uCD5C\uC804"
+  _applyRangeText: "\uCD5C\uC804\uC120"
   _shakePower: 2
   _shakeSpeed: 10000

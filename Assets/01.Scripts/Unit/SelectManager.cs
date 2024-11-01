@@ -16,6 +16,8 @@ public class SelectManager : MonoSingleton<SelectManager>
     private LayerMask _whatIsSeletable;
     [SerializeField]
     private LayerMask _whatIsAllyInteract;
+    [SerializeField]
+    private LayerMask _whatIsGround;
 
     private bool _isHolding = false;
 
@@ -42,8 +44,10 @@ public class SelectManager : MonoSingleton<SelectManager>
             {
                 foreach (ISelectable seletable in _selectableList)
                 {
-                    EnemyUnit target = null;
+                    Debug.Log(Camera.main.ScreenToWorldPoint(mousePos));
                     Collider2D collider = Physics2D.OverlapPoint(Camera.main.ScreenToWorldPoint(mousePos), _whatIsAllyInteract);
+                    Debug.Log(collider);
+                    EnemyUnit target = null;
                     if (collider != null)
                     {
                         if (collider.TryGetComponent(out EnemyUnit enemyUnit))
@@ -67,7 +71,6 @@ public class SelectManager : MonoSingleton<SelectManager>
                 }
             }
         }
-
     }
 
     private void HandleOnMouseClickEvent(bool isClicked, Vector2 mousePos)
