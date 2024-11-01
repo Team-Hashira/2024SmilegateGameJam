@@ -40,6 +40,7 @@ public class BuildingManager : MonoSingleton<BuildingManager>
 		PickingBuildingPlace = true;
 		Destroy(building.gameObject);
         UIManager.Instance.BulidCanvas(false);
+        _curTime = 0;
 	}
 
 	private Building CreateBuilding(BuildingType buildingType, Vector2 position)
@@ -49,9 +50,13 @@ public class BuildingManager : MonoSingleton<BuildingManager>
 		PickingBuildingPlace = false;
 		return building;
     }
-
+    private float _delay = 0.1f;
+    private float _curTime  = 0f;
 	private void Update()
 	{
+        _curTime += Time.deltaTime;
+
+		if (_curTime > _delay)
         if (PickingBuildingPlace == true)
         {
             _buildingGeneratePlaceUI.transform.position = Camera.main.ScreenToWorldPoint(Event.current.mousePosition);
