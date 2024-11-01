@@ -43,6 +43,7 @@ public class UnitMovement : MonoBehaviour, IUnitComponent
             StopCoroutine(_moveCoroutine);
         _owner.GetCompo<AstarAgent>().SetDestination(position);
         _path = _owner.GetCompo<AstarAgent>().GetPath();
+        if (_path.Count > _path.Count - 1)
         _path[_path.Count - 1] += (Vector3)UnityEngine.Random.insideUnitCircle * 0.8f;
         _moveCoroutine = StartCoroutine(MoveCoroutine());
     }

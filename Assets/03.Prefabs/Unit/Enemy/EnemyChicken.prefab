@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3034070539166885289}
-  - component: {fileID: 7675998960174897631}
+  - component: {fileID: 5928203645463397314}
   - component: {fileID: 7381091837041786594}
   - component: {fileID: 1635653415179014645}
   - component: {fileID: 7108564559672646997}
@@ -40,7 +40,7 @@ Transform:
   - {fileID: 2524882638054869349}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7675998960174897631
+--- !u!114 &5928203645463397314
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -49,18 +49,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1115892568972673886}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1fad7376b55f0a4a8923d376db7a260, type: 3}
+  m_Script: {fileID: 11500000, guid: 450e4e44be7387b449d85bafd2ef850c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Stat>k__BackingField: {fileID: 11400000, guid: d91906670d117cc42b4f89bdda554685, type: 2}
+  <Stat>k__BackingField: {fileID: 11400000, guid: dccf9770918863549861086c23afc069, type: 2}
   _hpBar: {fileID: 2275905214030666318}
   _targetLayer:
     serializedVersion: 2
     m_Bits: 1024
-  target: {fileID: 0}
-  whatIsEnemy:
-    serializedVersion: 2
-    m_Bits: 1024
+  _name: 
+  _description: 
 --- !u!114 &7381091837041786594
 MonoBehaviour:
   m_ObjectHideFlags: 0
