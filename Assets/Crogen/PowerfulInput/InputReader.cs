@@ -31,6 +31,14 @@ namespace Crogen.PowerfulInput
             _controls.Enable();
         }
 
+        public void SetControlable(bool x)
+        {
+            if (x == true)
+                _controls.Enable();
+            else
+                _controls.Disable();
+        }
+
         private void OnDisable()
         {
             _controls.Disable();

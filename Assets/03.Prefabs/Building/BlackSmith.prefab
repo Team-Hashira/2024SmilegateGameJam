@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 405366366406278665, guid: 68744efcc48a9e942bd33a6eb638089e, type: 3}
+      propertyPath: maxWorkingUnits
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 894682101679629768, guid: 68744efcc48a9e942bd33a6eb638089e, type: 3}
       propertyPath: m_Name
       value: BlackSmith

@@ -25,7 +25,6 @@ public class Building : MonoBehaviour, ISelectable
 
     public void Select()
     {
-        Debug.Log(SelectManager.Instance.GetSeletedObjects().Count);
         if (SelectManager.Instance.GetSeletedObjects().Count == 1)
         {
             //UIManager.Instance.UnitInfomationPanelOn();
