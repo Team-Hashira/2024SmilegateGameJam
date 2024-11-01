@@ -7260,6 +7260,22 @@ PrefabInstance:
       propertyPath: _camera
       value: 
       objectReference: {fileID: 842129619}
+    - target: {fileID: 5686809479651604219, guid: 1cf4cdc4f2d2ed049970cc3736b8242a, type: 3}
+      propertyPath: _maxPos.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686809479651604219, guid: 1cf4cdc4f2d2ed049970cc3736b8242a, type: 3}
+      propertyPath: _maxPos.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686809479651604219, guid: 1cf4cdc4f2d2ed049970cc3736b8242a, type: 3}
+      propertyPath: _minPos.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686809479651604219, guid: 1cf4cdc4f2d2ed049970cc3736b8242a, type: 3}
+      propertyPath: _minPos.y
+      value: -10
+      objectReference: {fileID: 0}
     - target: {fileID: 6782176440057411999, guid: 1cf4cdc4f2d2ed049970cc3736b8242a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.22

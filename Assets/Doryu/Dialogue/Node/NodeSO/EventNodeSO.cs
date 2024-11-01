@@ -3,7 +3,8 @@ using UnityEngine;
 
 public enum EDialogueEvent
 {
-    Close
+    Close,
+    ChangeScene,
 }
 
 [CreateAssetMenu(fileName = "EventNodeSO", menuName = "SO/Dialogue/EventNode")]

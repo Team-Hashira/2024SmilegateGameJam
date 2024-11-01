@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TextElementNodeSO
   m_EditorClassIdentifier: 
   childNodeSO: {fileID: 0}
-  _text: "\uB204\uAD70\uAC00 \uB9D0\uD588\uB2E4.\n"
+  _text: "\uBA38\uB098\uBA3C \uBBF8\uB798 "
   _writeDelay: 0.05
   _fontScale: 100
   effectSOList: []

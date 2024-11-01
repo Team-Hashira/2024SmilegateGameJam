@@ -33,7 +33,8 @@ public class TextShakeEffector : TextEffector
                 Vector3 shakeDir = Random.insideUnitCircle * shakeData.power;
                 for (int i = 0; i < 4; i++)
                 {
-                    vertices[shakeData.index + i] += shakeDir;
+                    if (vertices.Length > shakeData.index + i)
+                        vertices[shakeData.index + i] += shakeDir;
                 }
             }
         }
