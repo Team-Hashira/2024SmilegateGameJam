@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75fefa61a68a7b64c9046a1fae2ee713, type: 3}
   m_Name: TextScaleEffectSO 4
   m_EditorClassIdentifier: 
-  _targetText: "\\n\uCD5C\uC804"
+  _targetText: "\uCD5C\uC804\uC120"
   _fontScale: 1.2
