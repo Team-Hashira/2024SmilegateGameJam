@@ -52,11 +52,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 450e4e44be7387b449d85bafd2ef850c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Stat>k__BackingField: {fileID: 11400000, guid: d91906670d117cc42b4f89bdda554685, type: 2}
+  <Stat>k__BackingField: {fileID: 11400000, guid: 4267fe3586f5f9b4a8379d86a9ae8163, type: 2}
   _hpBar: {fileID: 6619482839429896456}
   _targetLayer:
     serializedVersion: 2
     m_Bits: 1024
+  _name: 
+  _description: 
 --- !u!114 &1816342221854134497
 MonoBehaviour:
   m_ObjectHideFlags: 0

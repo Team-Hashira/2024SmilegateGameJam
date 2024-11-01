@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 910cda7f58cf63043ba37fb6008a5412, type: 3}
   m_Name: WaitNodeSO 1
   m_EditorClassIdentifier: 
-  childNodeSO: {fileID: 0}
+  childNodeSO: {fileID: 11400000, guid: b55b16e775ddb624e855c4b28bae706e, type: 2}
   time: 3

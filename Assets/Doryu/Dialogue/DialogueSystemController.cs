@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [Serializable]
 public struct ActorData
@@ -55,7 +56,7 @@ public class DialogueSystemController : MonoBehaviour
 
         if (eDialogueEvent == EDialogueEvent.ChangeScene)
         {
-            Debug.Log("Sceneº¯°æ");
+            SceneManager.LoadScene("GameScene");
         }
     }
 }
