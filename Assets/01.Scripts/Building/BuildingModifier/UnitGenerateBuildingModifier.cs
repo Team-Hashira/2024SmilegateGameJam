@@ -25,7 +25,12 @@ public class UnitGenerateBuildingModifier : BuildingModifier
             _waitEnemyUnitList.Add(unit as EnemyUnit);
         }
     }
-    
+
+    private void Awake()
+    {
+        _owner = GetComponent<Building>();
+    }
+
     private void Update()
     {
         _curTime += Time.deltaTime;

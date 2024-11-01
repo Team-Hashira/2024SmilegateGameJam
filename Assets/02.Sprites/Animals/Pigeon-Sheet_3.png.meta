@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: 13bce44ffb00cf9408a0f0c54516fe3e
+guid: e321b9fd022a9b94187dac3b5d8d6a76
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 272926924390856611
-    second: Pigeon-Sheet_0
-  - first:
-      213: 412448040526159223
-    second: Pigeon-Sheet_1
-  - first:
-      213: -3337111843472789042
-    second: Pigeon-Sheet_2
-  - first:
-      213: -5838831570197229641
-    second: Pigeon-Sheet_3
-  - first:
-      213: 8544558106063373451
-    second: Pigeon-Sheet_4
+      213: 7194271601392635725
+    second: Pigeon-Sheet_3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -112,54 +100,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pigeon-Sheet_0
+      name: Pigeon-Sheet_3_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 0
-        width: 22
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3a7f4f97791a9c300800000000000000
-      internalID: 272926924390856611
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pigeon-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 2
-        width: 27
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 77d1edfbe4f49b500800000000000000
-      internalID: 412448040526159223
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pigeon-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 68
+        x: 4
         y: 1
         width: 27
         height: 24
@@ -171,52 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ec13e0a857230b1d0800000000000000
-      internalID: -3337111843472789042
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pigeon-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 1
-        width: 27
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7bfce035f9d48fea0800000000000000
-      internalID: -5838831570197229641
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pigeon-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 132
-        y: 4
-        width: 27
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b848792935e549670800000000000000
-      internalID: 8544558106063373451
+      spriteID: d4f40b297ef27d360800000000000000
+      internalID: 7194271601392635725
       vertices: []
       indices: 
       edges: []
@@ -225,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -235,11 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Pigeon-Sheet_0: 272926924390856611
-      Pigeon-Sheet_1: 412448040526159223
-      Pigeon-Sheet_2: -3337111843472789042
-      Pigeon-Sheet_3: -5838831570197229641
-      Pigeon-Sheet_4: 8544558106063373451
+      Pigeon-Sheet_3_0: 7194271601392635725
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

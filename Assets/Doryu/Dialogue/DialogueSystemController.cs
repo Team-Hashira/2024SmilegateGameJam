@@ -52,5 +52,10 @@ public class DialogueSystemController : MonoBehaviour
     {
         Debug.Log(eDialogueEvent.ToString() + "이벤트 발생!");
         onDialogueEvent?.Invoke(eDialogueEvent);
+
+        if (eDialogueEvent == EDialogueEvent.ChangeScene)
+        {
+            Debug.Log("Scene변경");
+        }
     }
 }

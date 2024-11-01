@@ -1,4 +1,7 @@
 using System.Net.NetworkInformation;
+using System.Security;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,6 +12,7 @@ public class UIManager : MonoSingleton<UIManager>
     [SerializeField] private Canvas _defaultCanvas;
     [SerializeField] private Canvas _dieCanvas;
     [SerializeField] private Canvas _upgradeCanvas;
+    [SerializeField] private Canvas _selectBuildingCanvas;
 
     [SerializeField] private Image _escPanel;
     [SerializeField] private Image _unitManagementPanel;
@@ -47,9 +51,46 @@ public class UIManager : MonoSingleton<UIManager>
         _isBulidCanvas = state;
     }
 
-    public void UnitManagementPanelOn()
+
+    public void UnitManagementPanelOn(string name, string description, Sprite animalSprite)
     {
         _unitManagementPanel.gameObject.SetActive(true);
+
+        Transform childImage = _unitInfomationPanel.transform.Find("Image_Unit");
+        Transform childName = _unitInfomationPanel.transform.Find("Text_UnitName");
+        Transform childDescription = _unitInfomationPanel.transform.Find("Text_UnitDescription");
+
+        if (childImage != null)
+        {
+            Image imageComponent = childImage.GetComponent<Image>();
+            if (imageComponent != null)
+            {
+                imageComponent.sprite = animalSprite;
+            }
+        }
+        
+        if (childName != null)
+        {
+            TextMeshProUGUI nameComponent = childName.GetComponent<TextMeshProUGUI>();
+            if (nameComponent != null)
+            {
+                nameComponent.text = name;
+            }
+        }
+        
+        if (childDescription != null)
+        {
+            TextMeshProUGUI descriptionComponent = childDescription.GetComponent<TextMeshProUGUI>();
+            if (descriptionComponent != null)
+            {
+                descriptionComponent.text = description;
+            }
+        }
+    }
+
+    public void SelectBuildingCanvas(bool state)
+    {
+        _selectBuildingCanvas.gameObject.SetActive(state);
     }
 
     public void UnitManagementPanelOff()

@@ -22,6 +22,6 @@ MonoBehaviour:
   - statType: 3
     defaultValue: 9
   - statType: 4
-    defaultValue: 6
+    defaultValue: 1
   - statType: 5
     defaultValue: 3

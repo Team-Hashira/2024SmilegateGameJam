@@ -25,7 +25,8 @@ public class TextNodeSO : SingleNodeSO
             childNodeSO.SetController(_controller);
         });
 
-        _actor.titleTextMesh.text = _actor.name;
+        if (_actor.titleTextMesh)
+            _actor.titleTextMesh.text = _actor.name;
         TextMachine = new TextEffectMachine(_actor.talkTextMesh);
 
         StringBuilder textSB = new StringBuilder();
